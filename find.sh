@@ -21,7 +21,7 @@ fi
 # 	 2:the path mustn't be ended with "/",else won't work
 
 # 1:relative path, result show as relative path
-echo "1:relative path, result show as relative path"
+echo "1: relative path, result show as relative path"
 find . \( -path ./t1 -o -path ./t2 \) -prune -o -name "1.tmp" -print
 
 # 2: absolute path , result show as absolute path
