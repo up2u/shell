@@ -1,8 +1,11 @@
-mkdir shell
-cd shell
-git init
-touch README
-git add README
-git commit -m 'first commit'
-git remote add origin git@github.com:up2u/shell.git
-git push origin master
+1:steps of push
+	mkdir shell
+	cd shell
+	git init
+	touch README
+	git add README
+	git commit -m 'first commit'
+	git remote add origin git@github.com:up2u/shell.git
+	git push origin master
+
+others:
