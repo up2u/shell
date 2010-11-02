@@ -12,7 +12,7 @@ then
 	touch t{1,2,3}/1.tmp
 fi
 
-#find
+#find, not work -prune , puzzled ?!
 find . \( -path t1/ -o -path t2/ \) -prune -o -name "1.tmp" -print
 
 exit $?
