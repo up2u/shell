@@ -10,6 +10,13 @@
 2:files.
 	1): clean.sh 
 	2): find.sh
+		find -name  with -path -prune to avoid some specified directory. 
 	3): fork_source_exec.sh, usage: ./fork_source_exec.sh {source | exec | fork} 
 	    for_fork_source_exec.sh
+	4): parenthese_brace_single.sh
+		just include command group to test they difference.
+		> (command1, command2, command3..) ; 
+		> function: {
+					command1, command2, command3..
+				    }; # NOTE: the commands must't in same line with rear }, or will error
 others:
