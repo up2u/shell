@@ -19,4 +19,7 @@
 		> function: {
 					command1, command2, command3..
 				    }; # NOTE: the commands must't in same line with rear }, or will error
+	5): $@_$*.sh : difference between $@, $*
+	6): parenthese_brace_with_$.sh
+		> most of operation parenthese brace with $.
 others:
