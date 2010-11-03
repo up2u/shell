@@ -22,4 +22,6 @@
 	5): $@_$*.sh : difference between $@, $*
 	6): parenthese_brace_with_$.sh
 		> most of operation parenthese brace with $.
+	7): file.txt
+		low2cap.sh : change 1st character of every word in the file.txt to CAP case.
 others:
