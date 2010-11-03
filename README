@@ -10,6 +10,6 @@
 2:files.
 	1): clean.sh 
 	2): find.sh
-	3): fork_source_exec.sh, 
+	3): fork_source_exec.sh, usage: ./fork_source_exec.sh {source | exec | fork} 
 	    for_fork_source_exec.sh
 others:
