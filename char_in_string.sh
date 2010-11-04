@@ -16,4 +16,9 @@ echo "hello" | awk 'BEGIN{FS="hello"}{a+=(NF-1)}END{print a}'
 echo -e "\nbut this show 0"
 echo "hello" | awk '     {FS="hello"}{a+=(NF-1)}END{print a}'
 
+# this seem that FS shoule be set as global of the follown operation
+# else they still take original FS. but not "hello"
+echo "change like following"
+echo -e "hello\n helloo\n hehellok" | awk  -Fhello '{a+=(NF-1)} END{print a}'
+
 exit $?
