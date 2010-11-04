@@ -25,4 +25,6 @@
 	7): file.txt
 		low2cap.sh : change 1st character of every word in the file.txt to CAP case.
 	8): awk.sh
+	9): script.sed : run sed in a script
+	10): sed.sh sed as a command in a bash
 others:

@@ -28,4 +28,12 @@ echo -e "hello word, i am mlj \n and you ?" | awk '{if(/?$/)  print "line rear N
 # substitution
 echo "condition -> multiple command,must use {} to include them"
 echo -e "hello word, i am mlj \n and you ?" | awk '{if($1=="and") {$1="AND"; print $0} }'
+
+# toupper  and tolower
+echo "let the hello -> Hello"
+echo 'hello word, i am' | awk '{print toupper(substr($1,1,1))substr($1,2)}'
+
+# first character to UP.
+echo " first character to UP."
+echo "hello word, i am"  | awk '!/^[0-9]/{for(i=NF;i>0;i--) {if($i~/^[a-z]/) {tmp=toupper(substr($i,1,1));$i=tmp substr($i,2);}}}1'
 exit $?
