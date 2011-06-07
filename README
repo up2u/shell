@@ -28,3 +28,4 @@
 	9): script.sed : run sed in a script
 	10): sed.sh sed as a command in a bash
 others:
+	test github.com with git command
