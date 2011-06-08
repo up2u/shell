@@ -1,0 +1,22 @@
+1: sendmail_program=${sendmail_program:-/usr/sbin/sendmail} ??
+2: 
+# If no argument is given, assume we are being called at boot time.
+_action=${1:-start}
+
+case ${_action} in
+start)
+    start_mta
+    start_mspq
+    ;;  
+
+stop)
+    stop_mta
+    stop_mspq
+    ;;  
+
+restart)
+    restart_mta
+    restart_mspq
+    ;;  
+
+start-mta)
