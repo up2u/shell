@@ -20,3 +20,5 @@ restart)
     ;;  
 
 start-mta)
+
+3: _rcshutdown_watchdog=$! ??
