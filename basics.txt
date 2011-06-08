@@ -1,0 +1,65 @@
+1: syntax: expr op1 operator op2 #space is required between number and operator
+[maolijie@neptune ~]$ expr 5 + 2   
+7 
+
+2: integer(Number without decimal point)
+  -eq -ne -lt -le -gt -ge 
+  if test 5 -eq 6
+
+3: string Comparisons
+   string1  = string2
+   string1 != string2
+   string              string1 is NOT NULL or not defined
+   -n string1          string1 is NOT NULL and does exist
+   -z string1          string1 is NULL and does exist
+
+4: file and directory
+   -s file              Non empty file 
+   -f file              Is File exist or normal file and not a directory
+   -d dir               Is Directory exist and not a file
+   -w file              Is writeable file
+   -r file              Is read-only file
+   -x file              Is file is executable
+5: Logical Operators
+   !                    NOT
+   -a                   AND
+   -o                   OR
+6:
+1) if condition
+   then
+   
+   else
+	   
+   fi 
+
+2):if condition
+   then
+
+   elif condition
+
+   elif condition
+
+   else
+
+   fi
+7:for var in list
+  do
+ 
+  done
+
+8:while condition
+  do
+	  
+  done 
+
+9: case $vari in 
+     pattern)
+	           command
+			   ;;
+     pattern)
+	           command
+			   ;;
+     *)
+	           command
+			   ;;
+   esac
