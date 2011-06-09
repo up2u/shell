@@ -298,7 +298,10 @@ Special Characters
 
   -  previous working directory
 
-
+bitwise operators
+  << <<=   >> >>= & &=  | |=  ~(NOT) ^(XOR) ^=
+logical(boolean) operators
+  !  && || 
 
 
 
