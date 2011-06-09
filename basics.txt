@@ -6,6 +6,11 @@
   -eq -ne -lt -le -gt -ge 
   if test 5 -eq 6
 
+  < <= > >=  use (("$a" < "$b"))
+  usage of (());
+  eg: d=$((2+3))
+  if (("$a" <= "$b")) ; then  echo true; else echo err ; fi
+
 3: string Comparisons
    string1  = string2
    string1 != string2
@@ -14,12 +19,26 @@
    -z string1          string1 is NULL and does exist
 
 4: file and directory
+   -e/-a                file exists
    -s file              Non empty file 
    -f file              Is File exist or normal file and not a directory
    -d dir               Is Directory exist and not a file
    -w file              Is writeable file
-   -r file              Is read-only file
+   -r file              Is has read permission
    -x file              Is file is executable
+   -b                   file is a block device
+   -c                   file is a character device
+   -p                   file is a pipe
+   -h                   file is a symbolic link 
+   -L                   ..
+   -S                   file is a socket
+   -t                   file (descriptor) is associated with a terminal device
+   -g/-u/-k             set group-id/user-id/sticky bit set
+   -O/-G                owner/group of your
+   f1 -nt f2            newer than
+   f1 -ot f2            older than
+   f1 -ef f2            f1,f2 are hard links to same file
+   
 5: Logical Operators
    !                    NOT
    -a                   AND
@@ -202,9 +221,82 @@ eg:
   ${parameter?err_msg}, ${parameter:?err_msg}
     If parameter set, use it, else print err_msg.
 
+Special Characters
+  #  Comments
+  ;; Terminator in a case option
+  .  "dot" character match. When matching characters, as part of a regular 
+     expression, a "dot" matches a single character.
+  "  partial quoting [double quote]
+  '  full quoting [single quote]
+  ,  comma operator. The comma operator links together a series of arithmetic
+     operations. All are evaluated, but only the last one is returned
+  \  escape [backslash]. A quoting mechanism for single characters
+  /  Filename path separator [forward slash]
+  `  command substitution This is also known as backquotes or backticks.
+  :  null command [colon] This is the shell equivalent of a "NOP" 
+    eg: 
+	  while :    # endless loop
+	  : > data.xxx # File "data.xxx" now empty.
+      # Same effect as cat /dev/null >data.xxx
+  ?  wild card
+  $  Variable substitution (contents of a variable)
+  $  end-of-line
+  ${} Parameter substitution.
+  $*, $@ positional parameters.
+  $?  exit status variable
+  $$  process ID variable
+  ()  command group.
+    eg: (a=hello; echo $a)
+	    # A listing of commands within parentheses starts a subshell.
+	  array initialization.
+	eg: Array=(element1 element2 element3)
+  {xxx,yyy,zzz,....} Brace expansion.
+    eg: 
+	  cat {file1,file2,file3} > combined_file
+      # No spaces allowed within the braces unless the spaces 
+	    are quoted or escaped
+      echo {file1,file2}\ :{\ A," B",' C'}
+      file1 : A file1 : B file1 : C file2 : A file2 : B file2 : C
+  {a..z}  Extended Brace expansion      # two dot
+    eg: echo {0..3}  # 0 1 2 3
+  {}    Block of code [curly brackets]
+	   creates an anonymous function (a function without a name). However,
+	   unlike in a "standard" function, the variables inside a code block
+	   remain visible to the remainder of the script
+  {}  placeholder for text, Used after xargs -i (replace strings option)
+    eg: ls . | xargs -i -t cp  ./{} $!
+  {}\;  pathname. Mostly used in find constructs. 
+        This is not a shell builtin.
+  []    test
+  [[]]  test Test expression between [[ ]]. More flexible than the 
+        single-bracket [ ] test, this is a shell keyword
+ 
+  []   array element
+     eg:  Array[1]=slot_1
+	      echo ${Array[1]}
+  []   range of characters  ??
+      As part of a regular expression, brackets delineate a 
+	  range of characters to match.
+  (()) integer expansion.
+       Expand and evaluate integer expression between (( )).
+  
+ redirection.
+   command &>filename redirects both the 
+          stdout and the stderr of command to filename.
+   command >&2 redirects stdout of command to stderr.
 
+  \<, \> word boundary in a regular expression.
 
+  -    redirection from/to stdin or stdout [dash].
+    eg: cat -
+        123
+		123
+		^D
+  -    The "-" can be used to pipe stdout to other commands.
+    eg: Using diff to compare a file with a section of another:
+	    grep Linux file1 | diff file2 -
 
+  -  previous working directory
 
 
 
