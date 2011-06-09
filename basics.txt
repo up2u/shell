@@ -63,3 +63,67 @@
 	           command
 			   ;;
    esac
+ 
+ 10: positional parameters
+ 
+  $#        Number of command line arguments
+  $*        All of the positional parameters, seen as a single word
+            "$*" must be quoted.
+  $@        Same as $*, but each parameter is a quoted string
+			that is, the parameters are passed on intact, 
+			without interpretation or expansion.  This means, 
+			among other things, that each parameter in the 
+			argument list is seen as a separate word.
+			"$@" should be quoted
+
+  $-        Flags passed to script(using set)
+            This was originally a ksh construct adopted into Bash
+
+  $!        PID (process ID) of last job run in background
+
+  $_        Special variable set to last argument of previous 
+            command executed.
+
+            example:
+			#! /bin/bash
+			
+			echo $_           # /bin/bash
+
+			du > /dev/null 
+			echo $_           # du
+
+			ls -al > /dev/null
+			echo $_           # -al (last argument)
+
+			:
+			echo $_           # :
+
+  $?    Exit status of a command
+  $$    Process ID of the script itself.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
