@@ -1,3 +1,15 @@
 1: sed pattern can use /[abc]/  !?
 
+##  G  h ??
+2: sed -e '1!G;h;$!d' forward.txt > backward.txt   ??
 
+3: \ / to '  ###
+ /home/lee/test#echo 'a\\b/c'
+ a\b/c
+ /home/lee/test#echo 'a\\b/c'|tr '\\|/' "'"
+ a'b'c
+
+4: merge line ?? eg: 1+2 ,3+4 ... ?
+
+  > tr -d '\n' <file  ??
+  >  sed '$!N;s/\n//' /tmp/3  ?   # near line
