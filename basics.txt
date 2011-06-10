@@ -304,7 +304,15 @@ logical(boolean) operators
   !  && || 
 
 
+local  ## 
+  local is used within a  function,
 
+1.${var}
+2.$(cmd)
+3.()和{}
+4.${var:-string},${var:+string},${var:=string},${var:?string}
+5.$((exp))
+6.${var%pattern},${var%%pattern},${var#pattern},${var##pattern}  
 
 
 
