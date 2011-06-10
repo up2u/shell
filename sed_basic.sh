@@ -31,4 +31,7 @@ echo -e  "11 22    abc   7987hh  \n   a1 2t    aXc   7P87hh  "   | sed 's/\(2*\)
 
 # cat two line 
 echo -e "111 \n 222 \n 333\n 444 \n 555" | sed  'N;s/\n//' 
+
+#exact match
+echo -e "111 \n  222 \n" | sed -n '/\<222\>/p'  
 exit $?
