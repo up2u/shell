@@ -1,0 +1,8 @@
+#! /bin/sh
+set -x
+
+# begin with .
+# and with any number char followed by:init.d/functions
+grep  "^..*init.d/functions"  /etc/rc5.d/K20nfs
+
+exit $?
