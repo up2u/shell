@@ -1,0 +1,2 @@
+file:  /etc/sysconfig/i18n
+i18n - Internationalisation / Internationalization
