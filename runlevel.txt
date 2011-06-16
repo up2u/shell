@@ -1,0 +1,3 @@
+env: f8
+[maolijie@neptune shell]$ /sbin/runlevel
+N 5
