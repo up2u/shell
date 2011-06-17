@@ -7,3 +7,9 @@
   substring extraction using expr.
   The -- | -- "or" RE operator matches any of a set of alternate characters.
 
+2: read -r redhat_release < /etc/redhat-release
+
+## Bash 3.2 and later has =~ operator with "normal" Perl-style regular expressions
+  if [[ "$redhat_release" =~ "Red Hat" ]]; then   ?? =~ 
+  
+  elif [[ "$redhat_release" =~ "Fedora" ]]; then  ?? 
