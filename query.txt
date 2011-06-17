@@ -13,3 +13,14 @@
   if [[ "$redhat_release" =~ "Red Hat" ]]; then   ?? =~ 
   
   elif [[ "$redhat_release" =~ "Fedora" ]]; then  ?? 
+
+
+strstr ??
+3: cmdline=$(cat /proc/cmdline)
+   if ! strstr "$cmdline" nomodules && [ -f /proc/modules ] ; then  # ?
+
+from ABS:
+# Strstr echoes a substring starting at the first occurrence of string s2 in
+# string s1, or nothing if s2 does not occur in the string. If s2 points to
+# a string of zero length, strstr echoes s1.
+
