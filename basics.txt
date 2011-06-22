@@ -315,6 +315,9 @@ local  ##
 6.${var%pattern},${var%%pattern},${var#pattern},${var##pattern}  
 
 
+find an empty directory
+> find . -maxdepth 1  -type d -empty 
+
 
 
 
