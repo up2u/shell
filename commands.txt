@@ -1,0 +1,24 @@
+1: files
+chmod 
+suid/guid
+chown
+chgrp
+umask
+
+stat filename # show file detail
+lsattr file   # ?
+chattr          ? 
+i # can not change permission 
+a # add append permission ?
+
+
+rwx st  # normal permission 
+l # lock file ??
+
+
+2: mask
+
+in /etc/bashrc 002  (normal user)
+so touch file : 666-022      = 644
+         directory : 777-022 = 755
+
