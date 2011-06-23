@@ -44,4 +44,10 @@ so touch file : 666-022      = 644
  -user/-group
  -m/a/ctime -n +n 
  -nogroup/user    # no effect group/user means not exist in /etc/group ,/etc/passwd
- -newer f1  ! f2  # newer than f1 but older than f2
+ -newer f1  ! -newer f2  # newer than f1 but older than f2
+
+  -a/c/mtime ? what's difference ?
+	* mtime: time of last modification (ls -l),
+	* ctime: time of last status change (ls -lc) and
+	* atime: time of last access (ls -lu).
+

@@ -13,5 +13,9 @@ find . -path ./.git  -prune -o -perm  111     # match exectuable bit was set,and
 find . -path ./.git  -prune -o -perm /111     # match any exectuable bit was set 
 find . -path ./.git  -prune -o -perm -111     # match all exectuable bit was set 
 
+## must use -o  ?
+#  type for ignore .git 
+# 
+find . -path ./.git -prune  -type f  -o -newer grep_basic.txt ! -newer basics.txt
 
 exit $?
