@@ -22,3 +22,26 @@ in /etc/bashrc 002  (normal user)
 so touch file : 666-022      = 644
          directory : 777-022 = 755
 
+3: ACL ?? 
+ for part user on same group with permission, and part user without permission
+
+4: check file : who access and when ??
+   find last fuser
+5: file difference :  inode, link number
+   between soft link and hard link 
+
+6: passwd -l   # lock user, can't load again
+   newgrp      # switch to other group,
+   
+7: find 
+   find  path -options -exec -ok command {} \;   ### 
+ -name 
+ -perm   
+	  > mode     # bit exactly match
+	  > -mode    # All bit is set
+	  > /mode    # Any bit is set
+ -prune           # not to find 
+ -user/-group
+ -m/a/ctime -n +n 
+ -nogroup/user    # no effect group/user means not exist in /etc/group ,/etc/passwd
+ -newer f1  ! f2  # newer than f1 but older than f2
