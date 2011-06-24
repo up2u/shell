@@ -318,6 +318,8 @@ local  ##
 find an empty directory
 > find . -maxdepth 1  -type d -empty 
 
+vim : see hexadecimal(16)
+:%!xxd
 
 
 
