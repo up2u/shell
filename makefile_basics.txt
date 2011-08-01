@@ -1,0 +1,21 @@
+1: 命令前面加 － 可以让命令忽略错误继续执行下去
+如：－ include [make file name]
+    － rm  a.o
+
+2: make支持三个通配符：“*”，“?”和“~”
+
+3: 一行有两个： ？?
+all: $(FF_DEP_LIBS) $(PROGS) $(ALL_TARGETS-yes)
+
+$(PROGS): %$(EXESUF): %_g$(EXESUF)
+    $(CP) $< $@
+	$(STRIP) $@
+4:
+
+静态模式规则的基本语法：
+TARGETS ...: TARGET-PATTERN: PREREQ-PATTERNS ...
+COMMANDS
+...
+
+“TAGETS”列出了此规则的一系列目标文件。像普通规则的目标一样可以包含通配符。
+“TAGET-PATTERN”和“PREREQ-PATTERNS”说明了如何为每一个目标文件生成依赖文件。从目标模式（TAGET-PATTERN）的目标名字中抽取一部分字符串（称为“茎”）。使用“茎”替代依赖模式（PREREQ-PATTERNS）中的相应部分来产生对应目标的依赖文件
