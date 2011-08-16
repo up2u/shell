@@ -1,0 +1,7 @@
+1: 
+if [ ! -e /proc/mounts ]; then 
+	mount -n -t proc /proc /proc                           # what -n -t ?
+	mount -n -t sysfs /sys /sys >/dev/null 2>&1            # and /proc /proc can be same ??
+fi
+
+? ps -axoargs  ?

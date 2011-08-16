@@ -1,0 +1,49 @@
+
+mutt + msmtp problem
+1):descritpion: when mutt -s hi -a /tmp/atta.txt unixlikeos@gmail.com < /tmp/mail.txt
+2):Error sending message, child exited 69 (Service unavailable.).
+   Segmentation fault (core dumped)
+
+solved:
+1: 
+freebsd >msmtp --serverinfo --host=smtp.gmail.com --tls=on --port=587 --tls-certcheck=off
+msmtp: support for TLS is not compiled in
+freebsd >
+
+2: so i pkg_delete msmtp,then use ports to install (config with openssl)
+
+3:~ >msmtp --serverinfo --host=smtp.gmail.com --tls=on --port=587 --tls_starttls on --tls-certcheck=off
+msmtp: unrecognized option '--tls_starttls'
+~ >msmtp --serverinfo --host=smtp.gmail.com --tls=on --port=587  --tls-certcheck=off
+SMTP server at smtp.gmail.com (pw-in-f109.1e100.net [74.125.53.109]), port 587:
+    mx.google.com ESMTP x16sm3091636wfc.10
+TLS certificate information:
+    Owner:
+        Common Name: smtp.gmail.com
+        Organization: Google Inc
+        Locality: Mountain View
+        State or Province: California
+        Country: US
+    Issuer:
+        Common Name: Google Internet Authority
+        Organization: Google Inc
+        Country: US
+    Validity:
+        Activation time: Wed Feb 16 12:38:09 2011
+        Expiration time: Thu Feb 16 12:48:09 2012
+    Fingerprints:
+        SHA1: DB:A0:2A:07:00:F9:E3:23:7D:07:E7:52:3C:95:9D:E6:7E:12:54:3F
+        MD5:  02:4C:12:F3:37:1F:0C:C1:EB:10:4B:92:F7:F1:E0:DF
+Capabilities:
+    SIZE 35882577:
+        Maximum message size is 35882577 bytes = 34.22 MiB
+    STARTTLS:
+        Support for TLS encryption via the STARTTLS command
+    AUTH:
+        Supported authentication methods:
+        PLAIN LOGIN 
+~ >
+
+4: the problem is just the tls=on (but the tls not compiled in msmtp)
+
+5: ok,now

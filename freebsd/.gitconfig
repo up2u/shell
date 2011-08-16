@@ -1,0 +1,13 @@
+[user]
+	name = MaoLijie
+	email = unixlikeos@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
+[alias]
+	st = status
+	cmt = commit
+	co = checkout
+	br = branch

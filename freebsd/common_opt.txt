@@ -1,0 +1,32 @@
+1: search 
+
+cd /usr/ports -> make search name="??"  
+              -> or make search key="??"
+
+2:echo /usr/ports/*/*name*
+
+3:cd /path/ports ;  make config
+
+4:  pkg_info -L foopackage-1.0.0 | less
+
+5:  chsh 命令
+    chsh -s /bin/tcsh root,bsd
+6: 自动补充： .tcshrc 
+   set autolist
+
+7: 修改FreeBSD-CSH-SHELL操作提示符
+   set prompt = "任意匹配字符"
+
+8:临时改变背景颜色 
+  vidcontrol black green
+
+9: load time
+   /boot/loader.conf add autoboot_delay="2"
+
+10: 重启网络:
+    /etc/rc.d/netif restart
+11:路由配置/etc/rc.d/routing restart
+
+12: 启动mysql server: /usr/local/etc/rc.d/mysql-server start
+
+13: mysql user:bsdsql passwd: bsdsql

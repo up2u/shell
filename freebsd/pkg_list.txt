@@ -1,0 +1,2 @@
+note:
+it is same the out of pkg_info with ls -1 /var/db/pkg

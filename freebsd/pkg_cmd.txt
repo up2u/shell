@@ -1,0 +1,3 @@
+# pkg_version -vXs openlda
+openldap-sasl-client-2.4.25_2       =   up-to-date with port
+

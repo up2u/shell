@@ -1,0 +1,9 @@
+1: install samba35 from ports
+
+> edit smb.conf for open permission
+> /usr/local/bin/testparm 
+> add samba_enable=yes to /etc/rc.conf
+> /usr/local/etc/rc.d/samba restart
+
+and seem ok
+

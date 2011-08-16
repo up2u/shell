@@ -1,0 +1,7 @@
+d directory
+l symbolic link
+s socket
+b block device file
+c character device file
+p named pipe (FIFO)
+- regular file

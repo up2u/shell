@@ -1,0 +1,8 @@
+set autolist
+
+umask 22
+set prompt="%c >"
+setenv EDITOR vim
+alias ll ls -lA
+
+set path = (/sbin /bin /usr/sbin /usr/bin /usr/games /usr/local/sbin /usr/local/bin $HOME/bin)
