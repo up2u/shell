@@ -24,3 +24,10 @@ from ABS:
 # string s1, or nothing if s2 does not occur in the string. If s2 points to
 # a string of zero length, strstr echoes s1.
 
+
+ what is successful ?
+ grep bsd /etc/passwd || echo no user !
+
+ 1: grep bsd /etc/passwd => echo $? = 0 this means successful. 
+ 2: grep mlj /etc/passwd || echo no user !  => grep mlj /etc/passwd ,the echo $? = 1, but means fail
+	it will output no user !
