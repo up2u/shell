@@ -1,0 +1,12 @@
+how to use Oprofile.
+Steps:
+	opcontrol --reset
+	opcontrol --init
+	opcontrol –session-dir=/tmp/
+	opcontrol --no-vmlinux
+	opcontrol --setup --event=CPU_CLK_UNHALTED:100000:0:0:1
+	opcontrol --start
+	./a.out
+	opcontrol –dump
+	opcontrol –stop / --shudown
+	opreport -l ./a.out | less
