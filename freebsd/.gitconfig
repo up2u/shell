@@ -1,5 +1,5 @@
 [user]
-	name = MaoLijie
+	name = Mao Lijie
 	email = unixlikeos@gmail.com
 [color]
 	diff = auto
@@ -9,5 +9,8 @@
 [alias]
 	st = status
 	cmt = commit
+	rmt = remote
 	co = checkout
 	br = branch
+[core]
+	excludesfile = ~/.gitignore
