@@ -1,0 +1,5 @@
+(put 'upcase-region 'disabled nil)
+(global-linum-mode t)
+(global-font-lock-mode 't)
+(show-paren-mode t)
+(setq show-paren-style 'parentheses)
