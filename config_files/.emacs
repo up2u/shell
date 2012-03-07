@@ -1,5 +1,37 @@
 (put 'upcase-region 'disabled nil)
 
+;; user name and email
+(setq user-full-name "Mao Lijie")
+(setq user-mail-address "maolijie@gmail.com")
+
+;; default open directory
+(setq default-directory "/opt/work")
+
+;; yank to cousor but not mouse point
+(setq mouse-yank-at-point t)
+
+;; kill-ring num
+(setq kill-ring-max 200)
+
+;; scroll
+(setq scroll-margin 3)
+
+;; text mode
+(setq default-major-mode 'text-mode)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+
+;; add line at end of file
+(setq require-final-newline t)
+
+;; cursor and mouse point avoidance
+(setq mouse-avoidance-mode 'animate)
+
+;; C-K delete line at the same time
+(setq-default kill-whole-line t)
+
+;; show buffer name
+(setq frame-title-format "emacs@%b")
+
 ;; binding
 (global-set-key [f5] 'goto-line)
 (global-set-key [f6] 'other-window)
@@ -21,9 +53,9 @@
 (setq x-select-enable-clipboard t)
 
 ;; set ident
-(setq c-basic-offset 4)
-(setq indent-tabs-mode t)
+(setq indent-tabs-mode nil)
 (setq default-tab-width 4)
+(setq c-basic-offset 4)
 (setq tab-width 4)
 (setq tab-stop-list ())
 
