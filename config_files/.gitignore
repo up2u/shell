@@ -1,0 +1,14 @@
+*.o
+*.a
+*~
+*.swp
+*#
+\#*#
+*.so
+*.out
+*.exe
+*.bin
+*.elf
+*.obj
+*.dump
+*.bak
