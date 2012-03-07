@@ -11,6 +11,7 @@
 
 ;; highlight
 (global-font-lock-mode 't)
+(global-hl-line-mode 1)
 
 ;; parenthese match
 (show-paren-mode t)
@@ -21,7 +22,7 @@
 
 ;; set ident
 (setq c-basic-offset 4)
-(setq indent-tabs-mode nil)
+(setq indent-tabs-mode t)
 (setq default-tab-width 4)
 (setq tab-width 4)
 (setq tab-stop-list ())
@@ -29,15 +30,9 @@
 ;; C language setting
 (add-hook 'c-mode-hook
           '(lambda ()
-           (c-set-style "K&R")
-           (setq tab-width 4)
-           (setq indent-tabs-mode t)
-           (setq c-basic-offset 4)))
+           (c-set-style "K&R")))
 
 ;; C++ language setting
 (add-hook 'c++-mode-hook
           '(lambda ()
-           (c-set-style "K&R")
-           (setq tab-width 4)
-           (setq indent-tabs-mode t)
-           (setq c-basic-offset 4)))
+           (c-set-style "K&R")))
