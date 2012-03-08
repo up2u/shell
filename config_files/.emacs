@@ -1,5 +1,8 @@
 (put 'upcase-region 'disabled nil)
 
+;;
+(setq inhibit-startup-message t)
+
 ;; user name and email
 (setq user-full-name "Mao Lijie")
 (setq user-mail-address "maolijie@gmail.com")
