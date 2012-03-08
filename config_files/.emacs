@@ -14,7 +14,7 @@
 (setq kill-ring-max 200)
 
 ;; scroll
-(setq scroll-margin 3)
+(setq scroll-margin 2)
 
 ;; text mode
 (setq default-major-mode 'text-mode)
