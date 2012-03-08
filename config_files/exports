@@ -1,0 +1,15 @@
+
+exports file example of NFS
+
+[root@orion ~]# cat /etc/exports 
+/nobackup1 192.168.1.101(rw,sync,no_root_squash) 192.168.1.102(rw,sync,no_root_squash) 192.168.1.103(rw,sync,no_root_squash) 192.168.1.104(rw,sync,no_root_squash) 192.168.1.105(rw,sync,no_root_squash) 192.168.1.106(rw,sync,no_root_squash) 192.168.1.107(rw,sync,no_root_squash) 192.168.1.108(rw,sync,no_root_squash) 192.168.1.109(rw,sync,no_root_squash)  192.168.1.22(rw,sync,no_root_squash) 192.168.1.202(rw,sync,no_root_squash)
+/andesWH 192.168.1.101(rw,sync,no_root_squash) 192.168.1.102(rw,sync,no_root_squash) 192.168.1.103(rw,sync,no_root_squash) 192.168.1.104(rw,sync,no_root_squash) 192.168.1.105(rw,sync,no_root_squash) 192.168.1.106(rw,sync,no_root_squash) 192.168.1.107(rw,sync,no_root_squash) 192.168.1.108(rw,sync,no_root_squash) 192.168.1.109(rw,sync,no_root_squash) 192.168.1.22(rw,sync,no_root_squash) 192.168.1.202(rw,sync,no_root_squash)
+/scm	192.168.1.101(rw,sync,no_root_squash) 192.168.1.102(rw,sync,no_root_squash) 192.168.1.103(rw,sync,no_root_squash)  192.168.1.104(rw,sync,no_root_squash) 192.168.1.105(rw,sync,no_root_squash) 192.168.1.106(rw,sync,no_root_squash) 192.168.1.107(rw,sync,no_root_squash) 192.168.1.108(rw,sync,no_root_squash) 192.168.1.109(rw,sync,no_root_squash) 192.168.1.22(rw,sync,no_root_squash) 192.168.1.202(rw,sync,no_root_squash)
+
+/user1/thwang   192.168.1.22(rw,sync,no_root_squash)
+/user1/maolijie 192.168.1.101(rw,sync,no_root_squash)
+/user1/denglx   192.168.1.103(rw,sync,no_root_squash)
+/user1/xuqiang  192.168.1.104(rw,sync,no_root_squash)
+/user1/lilibin  192.168.1.105(rw,sync,no_root_squash)
+/user1/zhengcb  192.168.1.106(rw,sync,no_root_squash)
+/user1/jwfeng   192.168.1.107(rw,sync,no_root_squash)
