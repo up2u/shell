@@ -1,5 +1,29 @@
 (put 'upcase-region 'disabled nil)
 
+;; user name and email
+;;(setq user-full-name "name")
+;;(setq user-mail-address "name@gmail.com")
+
+;; default open directory
+(setq default-directory "~/")
+
+;; set identation
+(setq indent-tabs-mode nil)
+(setq default-tab-width 4)
+(setq c-basic-offset 4)
+(setq tab-width 4)
+(setq tab-stop-list ())
+
+;; C language setting
+(add-hook 'c-mode-hook
+          '(lambda ()
+           (c-set-style "K&R")))
+
+;; C++ language setting
+(add-hook 'c++-mode-hook
+          '(lambda ()
+           (c-set-style "K&R")))
+
 ;; cscope - i don't use etags any more
 (require 'xcscope)
 (setq cscope-do-not-update-database t)
@@ -47,13 +71,6 @@
 
 ;; no need startup screen
 (setq inhibit-startup-message t)
-
-;; user name and email
-(setq user-full-name "Mao Lijie")
-(setq user-mail-address "maolijie@gmail.com")
-
-;; default open directory
-(setq default-directory "~/")
 
 ;; yank to cursor but not mouse point
 (setq mouse-yank-at-point t)
@@ -103,20 +120,3 @@
 
 ;; copy & paste with outside
 (setq x-select-enable-clipboard t)
-
-;; set identation
-(setq indent-tabs-mode nil)
-(setq default-tab-width 4)
-(setq c-basic-offset 4)
-(setq tab-width 4)
-(setq tab-stop-list ())
-
-;; C language setting
-(add-hook 'c-mode-hook
-          '(lambda ()
-           (c-set-style "K&R")))
-
-;; C++ language setting
-(add-hook 'c++-mode-hook
-          '(lambda ()
-           (c-set-style "K&R")))
