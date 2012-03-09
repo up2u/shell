@@ -1,0 +1,14 @@
+
+Steps of change Emacs startup position
+
+1: if there no ~/.Xdefaults
+touch one ~/.Xdefaults firstly
+
+2: then input like this
+
+[sand@universe ~]$ cat  ~/.Xdefaults
+Emacs.geometry:120x80+100+100
+                [width]x[height] + offset + offset
+3: at last run command: xrdb
+[sand@universe ~]$ xrdb ~/.Xdefaults
+[sand@universe ~]$ 
