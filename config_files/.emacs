@@ -7,12 +7,21 @@
 ;; not generate temp file #filename#
 (setq auto-save-default nil)
 
-;; show which function of current cursor
+;; show which function of current cursor, not work ?
 (require 'which-func)
 (which-func-mode 1)
 
 ;; M-x give optinal command
 (icomplete-mode 1)
+
+;; gud mode use cursor show variable value ? seem not work ?
+(gud-tooltip-mode)
+
+;; kill buffer of gud
+(add-hook 'gdb-mode-hook 'kill-buffer-when-shell-command-exit)
+
+;; kill buffer of shell term
+(add-hook 'term-mode-hook 'kill-buffer-when-shell-command-exit)
 
 ;; make it easy on eyes first ...
 ;;(set-foreground-color "gray")
@@ -34,7 +43,7 @@
 ;;(display-time)
 
 
-;;
+;; no need startup screen
 (setq inhibit-startup-message t)
 
 ;; user name and email
@@ -53,7 +62,7 @@
 ;; scroll
 (setq scroll-margin 2)
 
-;; cursor to be vertical bar
+;; cursor to be vertical bar, not a block
 (setq-default cursor-type 'bar)
 
 ;; text mode
@@ -83,6 +92,7 @@
 
 ;; highlight
 (global-font-lock-mode 't)
+;; highlight current line
 (global-hl-line-mode 1)
 
 ;; parenthese match
@@ -92,7 +102,7 @@
 ;; copy & paste with outside
 (setq x-select-enable-clipboard t)
 
-;; set ident
+;; set identation
 (setq indent-tabs-mode nil)
 (setq default-tab-width 4)
 (setq c-basic-offset 4)
