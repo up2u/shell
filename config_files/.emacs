@@ -34,7 +34,7 @@
 ;; default open directory
 (setq default-directory "~/")
 
-;; yank to cousor but not mouse point
+;; yank to cursor but not mouse point
 (setq mouse-yank-at-point t)
 
 ;; kill-ring num
@@ -42,6 +42,9 @@
 
 ;; scroll
 (setq scroll-margin 2)
+
+;; cursor to be vertical bar
+(setq-default cursor-type 'bar)
 
 ;; text mode
 (setq default-major-mode 'text-mode)
