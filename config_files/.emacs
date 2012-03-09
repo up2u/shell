@@ -24,8 +24,10 @@
 (add-hook 'term-mode-hook 'kill-buffer-when-shell-command-exit)
 
 ;; make it easy on eyes first ...
-;;(set-foreground-color "gray")
-;;(set-background-color "black")
+(set-foreground-color "Wheat")   ;; look ok
+(set-background-color "DarkSlateGray")  ;; look ok
+(set-cursor-color "Yellow")  ;; Yellow looks good
+(set-mouse-color "Orchid")   ;; so so
 
 ;; where my elisp stuff is 
 ;;(setq load-path (cons "/path" load-path))
