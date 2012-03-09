@@ -4,6 +4,16 @@
 (require 'xcscope)
 (setq cscope-do-not-update-database t)
 
+;; not generate temp file #filename#
+(setq auto-save-default nil)
+
+;; show which function of current cursor
+(require 'which-func)
+(which-func-mode 1)
+
+;; M-x give optinal command
+(icomplete-mode 1)
+
 ;; make it easy on eyes first ...
 ;;(set-foreground-color "gray")
 ;;(set-background-color "black")
