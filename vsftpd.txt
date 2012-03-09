@@ -1,0 +1,11 @@
+
+#for chroot 
+
+[root@lynx vsftpd]# cat /etc/vsftpd/chroot_list 
+Avatar
+andescnftp
+zh-jieli
+ftptest
+whstaff
+
+
