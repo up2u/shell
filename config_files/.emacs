@@ -1,5 +1,29 @@
 (put 'upcase-region 'disabled nil)
 
+;; cscope - i don't use etags any more
+(require 'xcscope)
+(setq cscope-do-not-update-database t)
+
+;; make it easy on eyes first ...
+;;(set-foreground-color "gray")
+;;(set-background-color "black")
+
+;; where my elisp stuff is 
+;;(setq load-path (cons "/path" load-path))
+
+;; none of these plese
+;;(scroll-bar-mode nil)
+(tool-bar-mode nil)
+;;(menu-bar-mode nil)
+
+;; way better buffer-switching
+(ido-mode t)
+
+;;show date and time in mode-line
+;;(setq display-time-day-and-date t)
+;;(display-time)
+
+
 ;;
 (setq inhibit-startup-message t)
 
@@ -8,7 +32,7 @@
 (setq user-mail-address "maolijie@gmail.com")
 
 ;; default open directory
-(setq default-directory "/opt/work")
+(setq default-directory "~/")
 
 ;; yank to cousor but not mouse point
 (setq mouse-yank-at-point t)
@@ -33,7 +57,7 @@
 (setq-default kill-whole-line t)
 
 ;; show buffer name
-(setq frame-title-format "emacs@%b")
+(setq frame-title-format "%b@emacs")
 
 ;; binding
 (global-set-key [f1] 'goto-line)
