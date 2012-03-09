@@ -36,8 +36,8 @@
 (setq frame-title-format "emacs@%b")
 
 ;; binding
-(global-set-key [f5] 'goto-line)
-(global-set-key [f6] 'other-window)
+(global-set-key [f1] 'goto-line)
+(global-set-key [f2] 'other-window)
 
 ;; line and column num
 (global-linum-mode t)
