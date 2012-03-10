@@ -24,6 +24,11 @@
           '(lambda ()
            (c-set-style "K&R")))
 
+;; Don't want any backup files
+(setq make-backup-files nil)
+;; Don't want any auto saving
+(setq auto-save-default nil)
+
 ;; cscope - i don't use etags any more
 (require 'xcscope)
 (setq cscope-do-not-update-database t)
