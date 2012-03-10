@@ -57,7 +57,7 @@
 ;;(setq load-path (cons "/path" load-path))
 
 ;; none of these plese
-;;(scroll-bar-mode nil)
+(scroll-bar-mode nil)
 (tool-bar-mode nil)
 ;;(menu-bar-mode nil)
 
