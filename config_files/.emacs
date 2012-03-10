@@ -62,6 +62,9 @@
 ;;(menu-bar-mode nil)
 
 ;; way better buffer-switching
+;; ido - interactively do things with buffers and files
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
 (ido-mode t)
 
 ;;show date and time in mode-line
