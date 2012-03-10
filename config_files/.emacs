@@ -58,7 +58,7 @@
 
 ;; none of these plese
 (scroll-bar-mode nil)
-(tool-bar-mode nil)
+(tool-bar-mode 0)
 ;;(menu-bar-mode nil)
 
 ;; way better buffer-switching
