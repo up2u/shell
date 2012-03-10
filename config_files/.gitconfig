@@ -15,3 +15,6 @@
 [core]
 	excludesfile = ~/.gitignore
 	whitespace = cr-at-eol
+#	editor = emacs
+[commit]
+	template = ~/.gitcommitmsg.txt
