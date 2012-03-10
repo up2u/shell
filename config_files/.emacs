@@ -5,7 +5,7 @@
 ;;(setq user-mail-address "name@gmail.com")
 
 ;; default open directory
-(setq default-directory "~/")
+(setq default-directory "/opt/work")
 
 ;; set identation
 (setq indent-tabs-mode nil)
@@ -27,6 +27,13 @@
 ;; cscope - i don't use etags any more
 (require 'xcscope)
 (setq cscope-do-not-update-database t)
+
+;; iswitchb
+(iswitchb-mode 1)
+;;prevent certain buffers from showing up
+;;(setq iswitchb-buffer-ignore '("^ " "*Buffer"))
+;;prevent switching to another frame
+(setq iswitchb-default-method 'samewindow)
 
 ;; not generate temp file #filename#
 (setq auto-save-default nil)
@@ -65,6 +72,7 @@
 ;; ido - interactively do things with buffers and files
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
+(setq ido-ignore-extensions t)
 (ido-mode t)
 
 ;;show date and time in mode-line
@@ -123,3 +131,15 @@
 
 ;; copy & paste with outside
 (setq x-select-enable-clipboard t)
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(ido-ignore-files (quote ("\\.out" "\\.a" "\\.o" "\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./"))))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
