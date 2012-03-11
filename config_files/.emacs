@@ -8,21 +8,13 @@
 (setq default-directory "/opt/work")
 
 ;; set identation
+(setq indent-line-function 'insert-tab)
+(setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44))
+(setq-default indent-tabs-mode nil)
 (setq indent-tabs-mode nil)
-(setq default-tab-width 4)
-(setq c-basic-offset 4)
+(setq-default tab-width 4)
 (setq tab-width 4)
-(setq tab-stop-list ())
-
-;; C language setting
-(add-hook 'c-mode-hook
-          '(lambda ()
-           (c-set-style "K&R")))
-
-;; C++ language setting
-(add-hook 'c++-mode-hook
-          '(lambda ()
-           (c-set-style "K&R")))
+(setq c-basic-offset 4)
 
 ;; Don't want any backup files
 (setq make-backup-files nil)
