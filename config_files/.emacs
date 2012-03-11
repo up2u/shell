@@ -118,7 +118,8 @@
 
 ;; binding
 (global-set-key [f1] 'goto-line)
-(global-set-key [f2] 'other-window)
+;;(global-set-key [f2] 'other-window)
+(global-set-key "\M-q" 'other-window)
 
 ;; line and column num
 (global-linum-mode t)
