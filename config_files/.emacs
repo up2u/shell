@@ -14,6 +14,9 @@
 (setq indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq tab-width 4)
+
+;; c-set-style
+(setq c-default-style "linux")
 (setq c-basic-offset 4)
 
 ;; Don't want any backup files
