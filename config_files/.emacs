@@ -7,6 +7,9 @@
 ;; default open directory
 (setq default-directory "/opt/work")
 
+;; from 70 -> 50
+(setq-default fill-column 50)
+
 ;; set identation
 (setq indent-line-function 'insert-tab)
 (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44))
