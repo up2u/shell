@@ -70,15 +70,14 @@
 
 ;; way better buffer-switching
 ;; ido - interactively do things with buffers and files
+(ido-mode t)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (setq ido-ignore-extensions t)
-(ido-mode t)
 
 ;;show date and time in mode-line
 ;;(setq display-time-day-and-date t)
 ;;(display-time)
-
 
 ;; no need startup screen
 (setq inhibit-startup-message t)
@@ -113,7 +112,6 @@
 
 ;; binding
 (global-set-key [f1] 'goto-line)
-;;(global-set-key [f2] 'other-window)
 (global-set-key "\M-q" 'other-window)
 
 ;; line and column num
@@ -132,6 +130,8 @@
 
 ;; copy & paste with outside
 (setq x-select-enable-clipboard t)
+
+;; customize setting
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
