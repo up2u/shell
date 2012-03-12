@@ -1,17 +1,17 @@
 change hostname, and setting of IP
 
-[maolijie@neptune ~]$ cat /etc/sysconfig/network
+[root@neptune ~]$ cat /etc/sysconfig/network
 NETWORKING=yes
 HOSTNAME=neptune.andestech.com.cn           ! hostname
 NTPSERVERARGS=iburst
 
-[maolijie@neptune ~]$ ls /etc/sysconfig/network-scripts/
+[root@neptune ~]$ ls /etc/sysconfig/network-scripts/
 ifcfg-eth0              ifdown-ippp             ifdown-ppp              ifup-aliases            ifup-ipv6               ifup-post               ifup-wireless
 ifcfg-lo                ifdown-ipsec            ifdown-routes           ifup-bnep               ifup-ipx                ifup-ppp                init.ipv6-global
 ifdown                  ifdown-ipv6             ifdown-sit              ifup-eth                ifup-isdn               ifup-routes             net.hotplug
 ifdown-bnep             ifdown-isdn             ifdown-tunnel           ifup-ippp               ifup-plip               ifup-sit                network-functions
 ifdown-eth              ifdown-post             ifup                    ifup-ipsec              ifup-plusb              ifup-tunnel             network-functions-ipv6
-[maolijie@neptune ~]$ cat /etc/sysconfig/network-scripts/ifcfg-eth0 
+[root@neptune ~]$ cat /etc/sysconfig/network-scripts/ifcfg-eth0
 DEVICE="eth0"
 BOOTPROTO="static"                           !
 HWADDR="00:19:21:4D:90:2E"
@@ -24,4 +24,17 @@ ONBOOT="yes"                                 !
 TYPE=Ethernet
 DNS1=202.103.44.150
 DNS2=208.67.222.222
-[maolijie@neptune ~]$ 
+[root@neptune ~]$
+
+[root@lynx ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth0
+DEVICE=eth0
+ONBOOT=yes
+BOOTPROTO=none
+HWADDR=00:1e:90:2a:f1:d2
+NETMASK=255.255.255.248
+IPADDR=2?.1?.36.22
+GATEWAY=2?.1?.36.17
+TYPE=Ethernet
+USERCTL=no
+IPV6INIT=no
+PEERDNS=yes

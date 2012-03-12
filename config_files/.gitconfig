@@ -17,4 +17,4 @@
 	whitespace = cr-at-eol
 #	editor = emacs
 [commit]
-	template = ~/.gitcommitmsg.txt
+#	template = ~/.gitcommitmsg.txt
