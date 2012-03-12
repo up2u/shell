@@ -111,7 +111,7 @@
 (setq-default kill-whole-line t)
 
 ;; show buffer name
-(setq frame-title-format "%b@emacs")
+(setq frame-title-format (list '(buffer-file-name "%f@Emacs" (dired-directory dired-directory "%b@Emacs"))))
 
 ;; binding
 (global-set-key [f1] 'goto-line)
