@@ -41,14 +41,14 @@
 ;; not generate temp file #filename#
 (setq auto-save-default nil)
 
-;; show which function of current cursor, not work ?
+;; show which function of current cursor
 (require 'which-func)
 (which-func-mode 1)
 
 ;; M-x give optinal command
 (icomplete-mode 1)
 
-;; gud mode use cursor show variable value ? seem not work ?
+;; gud mode use cursor show variable value
 (gud-tooltip-mode)
 
 ;; kill buffer of gud
@@ -110,8 +110,8 @@
 ;; C-K delete line at the same time
 (setq-default kill-whole-line t)
 
-;; show buffer name
-(setq frame-title-format (list '(buffer-file-name "%f@Emacs" (dired-directory dired-directory "%b@Emacs"))))
+;; show full path name in title
+(setq frame-title-format (list '(buffer-file-name "emacs@%f" (dired-directory dired-directory "emacs@%b"))))
 
 ;; binding
 (global-set-key [f1] 'goto-line)
