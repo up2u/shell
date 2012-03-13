@@ -1,13 +1,21 @@
+
+;; add load path
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+
+;;
 (put 'upcase-region 'disabled nil)
+
+;; gnuserv
+(require 'gnuserv-compat)
+(gnuserv-start)
+;; When loading files reuse existing frames.
+(setq gnuserv-frame (car (frame-list)))
 
 ;;
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
 
 ;; vertical motion starting at end of line keeps to ends of lines
 (setq track-eol t)
-
-;; add load path
-;;(add-to-list 'load-path "~/.emacs.d/lisp/")
 
 ;; auto close Completions buffer when you’re done with it
 (defun comint-close-completions ()
@@ -43,8 +51,8 @@ v  (comint-close-completions)
 ;; default open directory
 (setq default-directory "/opt/work")
 
-;; from 70 -> 50
-(setq-default fill-column 50)
+;; default 70
+;(setq-default fill-column 50)
 
 ;; set identation
 (setq indent-line-function 'insert-tab)
