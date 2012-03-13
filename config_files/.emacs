@@ -2,6 +2,10 @@
 ;; add load path
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
+;;Scrolling without moving the point, not work ?
+;;(setq scroll-conservatively 10000)
+(setq scroll-preserve-screen-position t)
+
 ;;
 (put 'upcase-region 'disabled nil)
 
@@ -10,7 +14,7 @@
 (gnuserv-start)
 ;; When loading files reuse existing frames.
 (setq gnuserv-frame (car (frame-list)))
-;; what is this ??
+;;
 (setq gnuserv-frame (lambda (f) (eq f (quote x))))
 
 ;;
