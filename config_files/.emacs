@@ -10,6 +10,8 @@
 (gnuserv-start)
 ;; When loading files reuse existing frames.
 (setq gnuserv-frame (car (frame-list)))
+;; what is this ??
+(setq gnuserv-frame (lambda (f) (eq f (quote x))))
 
 ;;
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
