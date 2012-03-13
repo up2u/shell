@@ -6,6 +6,9 @@
 ;; vertical motion starting at end of line keeps to ends of lines
 (setq track-eol t)
 
+;; add load path
+;;(add-to-list 'load-path "~/.emacs.d/lisp/")
+
 ;; auto close Completions buffer when you’re done with it
 (defun comint-close-completions ()
   "Close the comint completions buffer.
