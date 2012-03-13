@@ -1,5 +1,11 @@
 (put 'upcase-region 'disabled nil)
 
+;;
+(add-hook 'write-file-hooks 'delete-trailing-whitespace)
+
+;; vertical motion starting at end of line keeps to ends of lines
+(setq track-eol t)
+
 ;; auto close Completions buffer when you’re done with it
 (defun comint-close-completions ()
   "Close the comint completions buffer.
@@ -22,7 +28,7 @@ Dmitriy Igrishin's patched version of comint.el."
       (comint-close-completions)))
 
 (defadvice comint-dynamic-list-completions (after close-completions activate)
-  (comint-close-completions)
+v  (comint-close-completions)
   (if (not unread-command-events)
       ;; comint's "Type space to flush" swallows space. put it back in.
       (setq unread-command-events (listify-key-sequence " "))))
@@ -90,7 +96,7 @@ Dmitriy Igrishin's patched version of comint.el."
 (set-cursor-color "Yellow")  ;; Yellow looks good
 (set-mouse-color "Orchid")   ;; so so
 
-;; where my elisp stuff is 
+;; where my elisp stuff is
 ;;(setq load-path (cons "/path" load-path))
 
 ;; none of these plese
