@@ -17,6 +17,11 @@
 ;;
 (setq gnuserv-frame (lambda (f) (eq f (quote x))))
 
+;; open files with name
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward
+      uniquify-separator ":")
+
 ;;
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
 
