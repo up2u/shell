@@ -6,8 +6,11 @@
 ;;(setq scroll-conservatively 10000)
 (setq scroll-preserve-screen-position t)
 
-;;
+;; selected region to upcase/downcase
 (put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+;; narrowing
+;;(put 'narrow-to-region 'disabled nil)
 
 ;; gnuserv
 (require 'gnuserv-compat)
@@ -17,7 +20,7 @@
 ;;
 (setq gnuserv-frame (lambda (f) (eq f (quote x))))
 
-;; open files with name
+;; show files with same name
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward
       uniquify-separator ":")
