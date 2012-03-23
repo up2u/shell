@@ -401,30 +401,50 @@ v  (comint-close-completions)
           ac-source-files-in-current-dir
           ac-source-filename)))
 
-;; will an Warning, so i comment it
-;(am-add-hooks
-; `(lisp-mode-hook emacs-lisp-mode-hook lisp-interaction-mode-hook
-;                  svn-log-edit-mode-hook change-log-mode-hook)
-; 'ac-settings-4-lisp)
+;; from ahei
 
-;(apply-args-list-to-fun
-; (lambda (hook fun)
-;   (am-add-hooks hook fun))
-; `(('java-mode-hook   'ac-settings-4-java)
-;   ('c-mode-hook      'ac-settings-4-c)
-;   ('c++-mode-hook    'ac-settings-4-cpp)
-;   ('text-mode-hook   'ac-settings-4-text)
-;   ('eshell-mode-hook 'ac-settings-4-eshell)
-;   ('ruby-mode-hook   'ac-settings-4-ruby)
-;   ('html-mode-hook   'ac-settings-4-html)
-;   ('awk-mode-hook    'ac-settings-4-awk)
-;   ('tcl-mode-hook    'ac-settings-4-tcl)))
+(defun am-add-hooks (hooks function &optional append local)
+  "Call `add-hook' on hook list HOOKS use arguments FUNCTION, APPEND, LOCAL.HOOKS can be one list or just a hook."
+  (if (listp hooks)
+      (mapc
+       `(lambda (hook)
+          (add-hook hook ',function append local))
+       hooks)
+    (add-hook hooks function append local)))
 
-;(eal-eval-by-modes
-; ac-modes
-; (lambda (mode)
-;   (let ((mode-name (symbol-name mode)))
-;     (when (and (intern-soft mode-name) (intern-soft (concat mode-name "-map")))
-;       (define-key (symbol-value (am-intern mode-name "-map")) (kbd "C-c a") 'ac-start)))))
+(defun am-intern (&rest strings)
+  "`intern' use STRINGS."
+  (intern
+   (apply
+    'concat
+    (mapcar
+     (lambda (element)
+       (if (stringp element) element (symbol-name element)))
+     strings))))
+
+(am-add-hooks
+ `(lisp-mode-hook emacs-lisp-mode-hook lisp-interaction-mode-hook
+                  svn-log-edit-mode-hook change-log-mode-hook)
+ 'ac-settings-4-lisp)
+
+(apply-args-list-to-fun
+ (lambda (hook fun)
+   (am-add-hooks hook fun))
+ `(('java-mode-hook   'ac-settings-4-java)
+   ('c-mode-hook      'ac-settings-4-c)
+   ('c++-mode-hook    'ac-settings-4-cpp)
+   ('text-mode-hook   'ac-settings-4-text)
+   ('eshell-mode-hook 'ac-settings-4-eshell)
+   ('ruby-mode-hook   'ac-settings-4-ruby)
+   ('html-mode-hook   'ac-settings-4-html)
+   ('awk-mode-hook    'ac-settings-4-awk)
+   ('tcl-mode-hook    'ac-settings-4-tcl)))
+
+(eal-eval-by-modes
+ ac-modes
+ (lambda (mode)
+   (let ((mode-name (symbol-name mode)))
+     (when (and (intern-soft mode-name) (intern-soft (concat mode-name "-map")))
+       (define-key (symbol-value (am-intern mode-name "-map")) (kbd "C-c a") 'ac-start)))))
 
 (provide 'auto-complete-settings)
