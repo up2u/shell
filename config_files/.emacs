@@ -2,8 +2,8 @@
 ;; add load path
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
-;; flyspell
-(flyspell-mode 't)
+;; flyspell, seems not work ?
+;(flyspell-mode 't)
 
 ;; rectangle
 (require 'rect-mark)
