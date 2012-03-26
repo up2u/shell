@@ -48,7 +48,7 @@
       uniquify-separator ":")
 
 ;;
-(add-hook 'write-file-hooks 'delete-trailing-whitespace)
+;;(add-hook 'write-file-hooks 'delete-trailing-whitespace)
 
 ;; vertical motion starting at end of line keeps to ends of lines
 (setq track-eol t)
