@@ -2,6 +2,8 @@
 ;; add load path
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
+;; minibuf
+(setq enable-recursive-minibuffers t)
 ;; flyspell, seems not work ?
 ;(flyspell-mode 't)
 
@@ -194,7 +196,7 @@ v  (comint-close-completions)
 (setq frame-title-format (list '(buffer-file-name "emacs@%f" (dired-directory dired-directory "emacs@%b"))))
 
 ;; binding
-(global-set-key [f1] 'goto-line)
+;(global-set-key [f1] 'goto-line)
 (global-set-key "\M-q" 'other-window)
 
 ;; line and column num
