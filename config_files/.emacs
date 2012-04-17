@@ -4,8 +4,6 @@
 
 ;; minibuf
 (setq enable-recursive-minibuffers t)
-;; flyspell, seems not work ?
-;(flyspell-mode 't)
 
 ;; rectangle
 (require 'rect-mark)
@@ -50,7 +48,7 @@
       uniquify-separator ":")
 
 ;;
-;;(add-hook 'write-file-hooks 'delete-trailing-whitespace)
+(add-hook 'write-file-hooks 'delete-trailing-whitespace)
 
 ;; vertical motion starting at end of line keeps to ends of lines
 (setq track-eol t)
@@ -87,7 +85,7 @@ v  (comint-close-completions)
 ;;(setq user-mail-address "name@gmail.com")
 
 ;; default open directory
-(setq default-directory "/opt/work")
+(setq default-directory "/opt/work/")
 
 ;; default 70
 ;(setq-default fill-column 50)
