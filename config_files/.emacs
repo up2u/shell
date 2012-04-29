@@ -2,6 +2,22 @@
 ;; add load path
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
+;; tabbar
+(require 'tabbar)
+(tabbar-mode t)
+(define-prefix-command 'lwindow-map)
+; will cross group ?
+;(global-set-key (kbd "<M-left>")  'tabbar-backward)
+;(global-set-key (kbd "<M-right>") 'tabbar-forward)
+;;will not cross group ?
+(global-set-key (kbd "<M-left>")  'tabbar-backward-tab)
+(global-set-key (kbd "<M-right>") 'tabbar-forward-tab)
+(global-set-key (kbd "<M-up>")    'tabbar-backward-group)
+(global-set-key (kbd "<M-down>")  'tabbar-forward-group)
+
+;; tabbar-ruler, make tabbar look pretty
+(require 'tabbar-ruler)
+
 ;; minibuf
 (setq enable-recursive-minibuffers t)
 
