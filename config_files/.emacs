@@ -207,7 +207,9 @@ v  (comint-close-completions)
 (setq-default kill-whole-line t)
 
 ;; show full path name in title
-(setq frame-title-format (list '(buffer-file-name "emacs@%f" (dired-directory dired-directory "emacs@%b"))))
+;(setq frame-title-format (list '(buffer-file-name "emacs@%f" (dired-directory dired-directory "emacs@%b"))))
+(setq frame-title-format '("%m @ "(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+;(setq frame-title-format "emacs@%f")
 
 ;; binding
 ;(global-set-key [f1] 'goto-line)
