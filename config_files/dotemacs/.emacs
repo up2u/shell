@@ -524,3 +524,21 @@ v  (comint-close-completions)
 (require 'ecb)
 (require 'ecb-autoloads)
 (setq ecb-tip-of-the-day nil) ;; not work ??
+
+;; myself layout of ecb and scope
+(ecb-layout-define "my-cscope-layout" left nil
+(ecb-set-history-buffer)
+(ecb-split-ver 0.25 t)
+(other-window 1)
+(ecb-set-methods-buffer)
+(ecb-split-ver 0.45 t)
+(other-window 1)
+(ecb-set-cscope-buffer))
+
+(defecb-window-dedicator ecb-set-cscope-buffer " *ECB cscope-buf*"
+(switch-to-buffer "*cscope*"))
+
+(setq ecb-layout-name "my-cscope-layout")
+
+;; start at last of previous settings
+(ecb-activate)
