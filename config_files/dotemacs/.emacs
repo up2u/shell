@@ -489,12 +489,13 @@ v  (comint-close-completions)
 ;; Warning:cedet-called-interactively-p called with 0 arguments, but requires 1
 (setq byte-compile-warnings nil)
 (require 'cedet)
-(require 'semantic)
+;(require 'semantic)
 ;(semantic-load-enable-minimum-features)
 (semantic-load-enable-code-helpers)
 ;(semantic-load-enable-guady-code-helpers)
 ;(semantic-load-enable-excessive-code-helpers)
 (semantic-load-enable-semantic-debugging-helpers)
+;(global-srecode-minor-mode 1)  ;; need to learn more.
 (require 'semantic-tag-folding nil 'noerror)
 (global-semantic-tag-folding-mode 1)
 
@@ -512,3 +513,6 @@ v  (comint-close-completions)
                                                    (semantic-current-tag))
                         (setq first (cdr (car (cdr alist)))))
                     (semantic-mrub-switch-tags first))))
+
+;; hide and show macro #ifdef #endif
+(hide-ifdef-mode t)
