@@ -515,4 +515,4 @@ v  (comint-close-completions)
                     (semantic-mrub-switch-tags first))))
 
 ;; hide and show macro #ifdef #endif
-(hide-ifdef-mode t)
+(setq hide-ifdef-mode t)
