@@ -7,6 +7,8 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/tabbar")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/common/")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/semantic/")
+(add-to-list 'load-path "~/.emacs.d/lisp/ecb-2.40/")
+
 ;;
 (defconst my-emacs-path "~/.emacs.d/")
 (defconst my-emacs-lisps-path (concat my-emacs-path "lisp"))
@@ -516,3 +518,8 @@ v  (comint-close-completions)
 
 ;; hide and show macro #ifdef #endif
 (setq hide-ifdef-mode t)
+
+;; ECB
+(require 'ecb)
+(require 'ecb-autoloads)
+
