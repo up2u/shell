@@ -540,5 +540,9 @@ v  (comint-close-completions)
 
 (setq ecb-layout-name "my-cscope-layout")
 
+
+;; Disable buckets so that history buffer can display more entries
+(setq ecb-history-make-buckets 'never)
+
 ;; start at last of previous settings
 (ecb-activate)
