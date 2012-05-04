@@ -1,5 +1,6 @@
+1:
 in file ecb-upgrade.el
-comment some line ine  function  ecb-check-requirements 
+comment the following line in function  ecb-check-requirements
 
          ;; check if vedet-version is correct  
     when (or (not (boundp 'cedet-version))  
@@ -14,3 +15,7 @@ comment some line ine  function  ecb-check-requirements
                                ", "  
                                cedet-required-version-str-max  
                               "]")))  
+
+
+2: because of semantic-tag-folding.el not part of cedet, so need
+cp semantic-tag-folding.el cedet-1.1/semantic/semantic-tag-folding.el
