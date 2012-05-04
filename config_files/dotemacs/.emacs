@@ -570,3 +570,10 @@ that was stored with ska-point-to-register."
   (let ((tmp (point-marker)))
         (jump-to-register 8)
         (set-register 8 tmp)))
+
+;; highlight-symbol for highlight variable
+(require 'highlight-symbol)
+(global-set-key [(control f3)] 'highlight-symbol-at-point)
+(global-set-key [f3] 'highlight-symbol-next)  ;; go to next symbol
+(global-set-key [(shift f3)] 'highlight-symbol-prev) ;; go prev
+;(global-set-key [(meta f3)] 'highlight-symbol-prev) ;; comment for don't use meta key
