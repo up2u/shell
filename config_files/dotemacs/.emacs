@@ -549,8 +549,10 @@ v  (comint-close-completions)
 (ecb-activate)
 
 ;; jump to and jump back from 王垠
-(global-set-key [(control ?\.)] 'ska-point-to-register)
-(global-set-key [(control ?\,)] 'ska-jump-to-register)
+;(global-set-key [(control ?\.)] 'ska-point-to-register)
+;(global-set-key [(control ?\,)] 'ska-jump-to-register)
+(global-set-key [(M ?\.)] 'ska-point-to-register)
+(global-set-key [(M ?\,)] 'ska-jump-to-register)
 
 (defun ska-point-to-register()
   "Store cursorposition _fast_ in a register.
