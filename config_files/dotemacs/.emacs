@@ -1,9 +1,9 @@
 ;; add load path
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (add-to-list 'load-path "~/.emacs.d/lisp/util")
-(add-to-list 'load-path "~/.emacs.d/lisp/cscope")
 (add-to-list 'load-path "~/.emacs.d/lisp/auto-complete")
 (add-to-list 'load-path "~/.emacs.d/lisp/gnuserv")
+(add-to-list 'load-path "~/.emacs.d/lisp/global")
 (add-to-list 'load-path "~/.emacs.d/lisp/rect-mark")
 (add-to-list 'load-path "~/.emacs.d/lisp/tabbar")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/common/")
@@ -351,8 +351,6 @@ v  (comint-close-completions)
 ;;(setq user-full-name "name")
 ;;(setq user-mail-address "name@gmail.com")
 
-;; default open directory
-(setq default-directory "/opt/work/")
 
 ;; default 70
 ;(setq-default fill-column 50)
@@ -577,3 +575,16 @@ that was stored with ska-point-to-register."
 (global-set-key [f3] 'highlight-symbol-next)  ;; go to next symbol
 (global-set-key [(shift f3)] 'highlight-symbol-prev) ;; go prev
 ;(global-set-key [(meta f3)] 'highlight-symbol-prev) ;; comment for don't use meta key
+
+;;
+(autoload 'gtags-mode "gtags" "" t)
+(add-hook 'c-mode-hook
+          '(lambda ()
+             (gtags-mode t)))
+;; 2 useful binding, but how use its own keymap ???
+(global-set-key [(f4)] 'gtags-find-tag)
+(global-set-key [(shift f4)] 'gtags-pop-stack)
+
+;; default open directory
+;; put the last so not influenced by ECB ??
+(setq default-directory "/opt/work/")
