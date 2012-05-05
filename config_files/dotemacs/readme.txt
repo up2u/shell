@@ -19,3 +19,6 @@ comment the following line in function  ecb-check-requirements
 
 2: because of semantic-tag-folding.el not part of cedet, so need
 cp semantic-tag-folding.el cedet-1.1/semantic/semantic-tag-folding.el
+
+3: change ecb-face.el in ecb directory
+   to change colour
