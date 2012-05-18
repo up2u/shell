@@ -503,19 +503,19 @@ v  (comint-close-completions)
 (global-semantic-tag-folding-mode 1)
 
 ;; jump
-(global-set-key [f12] 'semantic-ia-fast-jump)
-(global-set-key [S-f12]
-                (lambda ()
-                  (interactive)
-                  (if (ring-empty-p (oref semantic-mru-bookmark-ring ring))
-                      (error "Semantic Bookmark ring is currently empty"))
-                  (let* ((ring (oref semantic-mru-bookmark-ring ring))
-                         (alist (semantic-mrub-ring-to-assoc-list ring))
-                         (first (cdr (car alist))))
-                    (if (semantic-equivalent-tag-p (oref first tag)
-                                                   (semantic-current-tag))
-                        (setq first (cdr (car (cdr alist)))))
-                    (semantic-mrub-switch-tags first))))
+;;(global-set-key [f12] 'semantic-ia-fast-jump)
+;;(global-set-key [S-f12]
+;;                (lambda ()
+;;                  (interactive)
+;;                  (if (ring-empty-p (oref semantic-mru-bookmark-ring ring))
+;;                      (error "Semantic Bookmark ring is currently empty"))
+;;                  (let* ((ring (oref semantic-mru-bookmark-ring ring))
+;;                         (alist (semantic-mrub-ring-to-assoc-list ring))
+;;                         (first (cdr (car alist))))
+;;                    (if (semantic-equivalent-tag-p (oref first tag)
+;;                                                   (semantic-current-tag))
+;;                        (setq first (cdr (car (cdr alist)))))
+;;                    (semantic-mrub-switch-tags first))))
 
 ;; hide and show macro #ifdef #endif
 (setq hide-ifdef-mode t)
