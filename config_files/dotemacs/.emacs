@@ -481,6 +481,7 @@ Dmitriy Igrishin's patched version of comint.el."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ ;'(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 98 :width normal))))
  )
 
 ;; Warning:cedet-called-interactively-p called with 0 arguments, but requires 1
@@ -582,10 +583,9 @@ that was stored with ska-point-to-register."
 (global-set-key (kbd "C-t")   'gtags-pop-stack)
 
 ;; default open directory
-;; put the last so not influenced by ECB ??
-;; show full path name in title, set title must put at last line ??
+(setq default-directory "/opt/work/")
 ;(setq frame-title-format (list '(buffer-file-name "emacs@%f" (dired-directory dired-directory "emacs@%b"))))
 ;(setq frame-title-format "emacs@%f")
-;; %m -- print the mode name.
-(setq default-directory "/opt/work/")
-(setq frame-title-format '("%m @ "(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+(setq frame-title-format '("%m @ "("%f" ("%b"))))
+;(warn "my warning msg 1: default-directory: %s" default-directory)
+;(warn "my warning msg 1: frame-title-format:%s" frame-title-format)
