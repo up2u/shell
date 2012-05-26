@@ -11,7 +11,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/semantic/")
 (add-to-list 'load-path "~/.emacs.d/lisp/ecb-2.40/")
 
-;;
+;;customize defined variable to storing path
 (defconst my-emacs-path "~/.emacs.d/")
 (defconst my-emacs-lisps-path (concat my-emacs-path "lisp"))
 
@@ -19,7 +19,7 @@
 (require 'tabbar)
 (tabbar-mode t)
 (define-prefix-command 'lwindow-map)
-; will cross group ?
+;; will cross group ?
 ;(global-set-key (kbd "<M-left>")  'tabbar-backward)
 ;(global-set-key (kbd "<M-right>") 'tabbar-forward)
 ;;will not cross group ?
@@ -64,10 +64,10 @@
 Used in advice to various comint functions to automatically close
 the completions buffer as soon as I'm done with it. Based on
 Dmitriy Igrishin's patched version of comint.el."
-(if comint-dynamic-list-completions-config
-    (progn
-      (set-window-configuration comint-dynamic-list-completions-config)
-      (setq comint-dynamic-list-completions-config nil))))
+  (if comint-dynamic-list-completions-config
+      (progn
+        (set-window-configuration comint-dynamic-list-completions-config)
+        (setq comint-dynamic-list-completions-config nil))))
 
 (defadvice comint-send-input (after close-completions activate)
   (comint-close-completions))
@@ -80,7 +80,7 @@ Dmitriy Igrishin's patched version of comint.el."
       (comint-close-completions)))
 
 (defadvice comint-dynamic-list-completions (after close-completions activate)
-v  (comint-close-completions)
+  v  (comint-close-completions)
   (if (not unread-command-events)
       ;; comint's "Type space to flush" swallows space. put it back in.
       (setq unread-command-events (listify-key-sequence " "))))
@@ -371,6 +371,7 @@ v  (comint-close-completions)
 ;; Don't want any backup files
 (setq make-backup-files nil)
 ;; Don't want any auto saving
+;; not generate temp file #filename#
 (setq auto-save-default nil)
 
 ;; iswitchb
@@ -379,9 +380,6 @@ v  (comint-close-completions)
 ;;(setq iswitchb-buffer-ignore '("^ " "*Buffer"))
 ;;prevent switching to another frame
 (setq iswitchb-default-method 'samewindow)
-
-;; not generate temp file #filename#
-(setq auto-save-default nil)
 
 ;; M-x give optinal command
 (icomplete-mode 1)
@@ -405,7 +403,7 @@ v  (comint-close-completions)
 ;;(setq load-path (cons "/path" load-path))
 
 ;; none of these plese
-(scroll-bar-mode nil)
+(scroll-bar-mode 0)
 (tool-bar-mode 0)
 ;;(menu-bar-mode nil)
 
@@ -437,7 +435,7 @@ v  (comint-close-completions)
 
 ;; text mode
 (setq default-major-mode 'text-mode)
-(add-hook 'text-mode-hook 'turn-on-auto-fill)
+;(add-hook 'text-mode-hook 'turn-on-auto-fill) ;; comment it because it had previous !!, i don't know how its effect !
 
 ;; add line at end of file
 (setq require-final-newline t)
@@ -448,10 +446,6 @@ v  (comint-close-completions)
 ;; C-K delete line at the same time
 (setq-default kill-whole-line t)
 
-;; show full path name in title
-;(setq frame-title-format (list '(buffer-file-name "emacs@%f" (dired-directory dired-directory "emacs@%b"))))
-;(setq frame-title-format '("%m @ "(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
-(setq frame-title-format "emacs@%f")
 
 ;; binding
 ;(global-set-key [f1] 'goto-line)
@@ -476,17 +470,17 @@ v  (comint-close-completions)
 
 ;; customize setting
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(ecb-options-version "2.40")
  '(ido-ignore-files (quote ("\\.out" "\\.a" "\\.o" "\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./"))))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
 
 ;; Warning:cedet-called-interactively-p called with 0 arguments, but requires 1
@@ -502,25 +496,26 @@ v  (comint-close-completions)
 (require 'semantic-tag-folding nil 'noerror)
 (global-semantic-tag-folding-mode 1)
 
-;; jump
-(global-set-key [f12] 'semantic-ia-fast-jump)
-(global-set-key [S-f12]
-                (lambda ()
-                  (interactive)
-                  (if (ring-empty-p (oref semantic-mru-bookmark-ring ring))
-                      (error "Semantic Bookmark ring is currently empty"))
-                  (let* ((ring (oref semantic-mru-bookmark-ring ring))
-                         (alist (semantic-mrub-ring-to-assoc-list ring))
-                         (first (cdr (car alist))))
-                    (if (semantic-equivalent-tag-p (oref first tag)
-                                                   (semantic-current-tag))
-                        (setq first (cdr (car (cdr alist)))))
-                    (semantic-mrub-switch-tags first))))
-
+;; jump from ???
+;;(global-set-key [f12] 'semantic-ia-fast-jump)
+;;(global-set-key [S-f12]
+;;                (lambda ()
+;;                  (interactive)
+;;                  (if (ring-empty-p (oref semantic-mru-bookmark-ring ring))
+;;                      (error "Semantic Bookmark ring is currently empty"))
+;;                  (let* ((ring (oref semantic-mru-bookmark-ring ring))
+;;                         (alist (semantic-mrub-ring-to-assoc-list ring))
+;;                         (first (cdr (car alist))))
+;;                    (if (semantic-equivalent-tag-p (oref first tag)
+;;                                                   (semantic-current-tag))
+;;                        (setq first (cdr (car (cdr alist)))))
+;;                    (semantic-mrub-switch-tags first))))
+;;
 ;; hide and show macro #ifdef #endif
 (setq hide-ifdef-mode t)
 
 ;; ECB
+(setq stack-trace-on-error t)
 (require 'ecb)
 (require 'ecb-autoloads)
 (setq ecb-tip-of-the-day nil) ;; not work ??
@@ -545,7 +540,7 @@ v  (comint-close-completions)
 (setq ecb-history-make-buckets 'never)
 
 ;; start at last of previous settings
-(ecb-activate)
+;(ecb-activate)
 
 ;; jump to and jump back from 王垠
 ;(global-set-key [(control ?\.)] 'ska-point-to-register)
@@ -588,4 +583,9 @@ that was stored with ska-point-to-register."
 
 ;; default open directory
 ;; put the last so not influenced by ECB ??
+;; show full path name in title, set title must put at last line ??
+;(setq frame-title-format (list '(buffer-file-name "emacs@%f" (dired-directory dired-directory "emacs@%b"))))
+;(setq frame-title-format "emacs@%f")
+;; %m -- print the mode name.
 (setq default-directory "/opt/work/")
+(setq frame-title-format '("%m @ "(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
