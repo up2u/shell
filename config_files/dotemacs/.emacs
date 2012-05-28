@@ -581,10 +581,12 @@ that was stored with ska-point-to-register."
 (global-set-key (kbd "C-c t") 'gtags-find-tag)
 (global-set-key (kbd "C-t")   'gtags-pop-stack)
 
-;; default open directory
-(setq default-directory "/opt/work/")
-;(setq frame-title-format (list '(buffer-file-name "emacs@%f" (dired-directory dired-directory "emacs@%b"))))
-;(setq frame-title-format "emacs@%f")
-(setq frame-title-format '("%m @ "("%f" ("%b"))))
 ;(warn "my warning msg 1: default-directory: %s" default-directory)
 ;(warn "my warning msg 1: frame-title-format:%s" frame-title-format)
+
+;; default open directory
+(setq default-directory "/opt/work/")
+
+;; set frame title
+;(setq frame-title-format (list '(buffer-file-name "emacs@%f" (dired-directory dired-directory "emacs@%b"))))
+(setq frame-title-format '("%m @ "(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
