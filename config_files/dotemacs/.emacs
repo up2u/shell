@@ -15,12 +15,6 @@
 (defconst my-emacs-path "~/.emacs.d/")
 (defconst my-emacs-lisps-path (concat my-emacs-path "lisp"))
 
-;; warn when C synatax error
-(global-cwarn-mode 1)
-
-;; no bell
-;(setq visible-bell t)
-
 ;; tabbar
 (require 'tabbar)
 (tabbar-mode t)
