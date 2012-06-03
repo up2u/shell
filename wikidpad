@@ -1,0 +1,7 @@
+#! /bin/sh
+
+cd /usr/local/share/wikidPad/
+	python WikidPad.py &
+cd -
+
+exit $?
