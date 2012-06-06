@@ -88,6 +88,11 @@ Dmitriy Igrishin's patched version of comint.el."
 ;; cscope - i don't use etags any more
 (require 'xcscope)
 (setq cscope-do-not-update-database t)
+;; cscope key binding
+(global-set-key [f4] 'cscope-find-functions-calling-this-function)
+(global-set-key [(shift f4)] 'cscope-find-called-functions)
+(global-set-key [f5] 'cscope-find-this-symbol)
+(global-set-key [f6] 'cscope-find-this-file)
 
 ;; show which function of current cursor
 (require 'which-func)
