@@ -19,6 +19,8 @@
 
 ;; auto revert buffers
 (global-auto-revert-mode t)
+;; not output backtrace buffer when warning or errors
+;(setq stack-trace-on-error t)
 
 ;; tabbar
 (require 'tabbar)
@@ -525,7 +527,6 @@ Dmitriy Igrishin's patched version of comint.el."
 (setq hide-ifdef-mode t)
 
 ;; ECB
-(setq stack-trace-on-error t)
 (require 'ecb)
 (require 'ecb-autoloads)
 (setq ecb-tip-of-the-day nil) ;; not work ??
