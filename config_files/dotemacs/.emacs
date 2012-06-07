@@ -15,6 +15,9 @@
 (defconst my-emacs-path "~/.emacs.d/")
 (defconst my-emacs-lisps-path (concat my-emacs-path "lisp"))
 
+;; auto revert buffers
+(global-auto-revert-mode t)
+
 ;; tabbar
 (require 'tabbar)
 (tabbar-mode t)
