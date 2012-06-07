@@ -9,6 +9,8 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/tabbar")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/common/")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/semantic/")
+;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.0.1/common/")
+;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.0.1/semantic/")
 (add-to-list 'load-path "~/.emacs.d/lisp/ecb-2.40/")
 
 ;;customize defined variable to storing path
