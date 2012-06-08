@@ -603,8 +603,9 @@ that was stored with ska-point-to-register."
 (setq frame-title-format '("%m @ "(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 
 ;; binding for previous/next-buffer
-(global-set-key [f2] 'previous-buffer)
-(global-set-key [f1] 'next-buffer)
-(global-set-key [f5] 'kill-buffer)
+(global-set-key [f2]  'previous-buffer)
+(global-set-key [f1]  'next-buffer)
+(global-set-key [f5]  'kill-buffer)
+(global-set-key [f12] 'delete-window)
 ;(global-set-key [f12] 'pop-global-mark) ; what is it ?
 
