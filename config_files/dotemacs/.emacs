@@ -99,7 +99,8 @@ Dmitriy Igrishin's patched version of comint.el."
 (global-set-key [f4] 'cscope-find-functions-calling-this-function)
 (global-set-key [(shift f4)] 'cscope-find-called-functions)
 (global-set-key [f6] 'cscope-find-this-symbol)
-(global-set-key [f7] 'cscope-find-this-file)
+(global-set-key [f7] 'cscope-find-this-text-string)
+(global-set-key [f11] 'cscope-find-this-file)
 
 ;; show which function of current cursor
 (require 'which-func)
@@ -524,7 +525,7 @@ Dmitriy Igrishin's patched version of comint.el."
 ;;                        (setq first (cdr (car (cdr alist)))))
 ;;                    (semantic-mrub-switch-tags first))))
 ;; hide and show macro #ifdef #endif
-(setq hide-ifdef-mode t)
+;(setq hide-ifdef-mode t)
 
 ;; ECB
 (require 'ecb)
