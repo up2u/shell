@@ -100,7 +100,8 @@ Dmitriy Igrishin's patched version of comint.el."
 (global-set-key [(shift f4)] 'cscope-find-called-functions)
 (global-set-key [f6] 'cscope-find-this-symbol)
 (global-set-key [f7] 'cscope-find-this-text-string)
-(global-set-key [f11] 'cscope-find-this-file)
+(global-set-key [f8] 'cscope-find-global-definition)
+(global-set-key [f9] 'cscope-find-this-file)
 
 ;; show which function of current cursor
 (require 'which-func)
