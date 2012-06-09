@@ -536,15 +536,15 @@ Dmitriy Igrishin's patched version of comint.el."
 ;; myself layout of ecb and scope
 (ecb-layout-define "my-cscope-layout" left nil
 (ecb-set-history-buffer)
-(ecb-split-ver 0.25 t)
+(ecb-split-ver 0.35 t)
 (other-window 1)
 (ecb-set-methods-buffer)
-(ecb-split-ver 0.45 t)
-(other-window 1)
-(ecb-set-cscope-buffer))
-
-(defecb-window-dedicator ecb-set-cscope-buffer " *ECB cscope-buf*"
-(switch-to-buffer "*cscope*"))
+;(ecb-split-ver 0.45 t)
+;(other-window 1)
+;(ecb-set-cscope-buffer)
+)
+;(defecb-window-dedicator ecb-set-cscope-buffer " *ECB cscope-buf*"
+;(switch-to-buffer "*cscope*"))
 
 (setq ecb-layout-name "my-cscope-layout")
 
