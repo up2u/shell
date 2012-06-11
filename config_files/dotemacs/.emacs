@@ -442,7 +442,7 @@ Dmitriy Igrishin's patched version of comint.el."
 (setq kill-ring-max 200)
 
 ;; scroll
-(setq scroll-margin 2)
+;(setq scroll-margin 2)
 
 ;; cursor to be vertical bar, not a block
 (setq-default cursor-type 'bar)
