@@ -98,10 +98,10 @@ Dmitriy Igrishin's patched version of comint.el."
 ;; cscope key binding
 (global-set-key [f4] 'cscope-find-functions-calling-this-function)
 (global-set-key [(shift f4)] 'cscope-find-called-functions)
-(global-set-key [f6] 'cscope-find-this-symbol)
-(global-set-key [f7] 'cscope-find-this-text-string)
-(global-set-key [f8] 'cscope-find-global-definition)
-(global-set-key [f9] 'cscope-find-this-file)
+(global-set-key [f5] 'cscope-find-this-symbol)
+(global-set-key [f6] 'cscope-find-this-text-string)
+(global-set-key [f7] 'cscope-find-global-definition)
+(global-set-key [f8] 'cscope-find-this-file)
 
 ;; show which function of current cursor
 (require 'which-func)
@@ -607,7 +607,7 @@ that was stored with ska-point-to-register."
 ;; binding for previous/next-buffer
 (global-set-key [f2]  'previous-buffer)
 (global-set-key [f1]  'next-buffer)
-(global-set-key [f5]  'kill-buffer)
+(global-set-key [f11] 'kill-buffer)
 (global-set-key [f12] 'delete-window)
 ;(global-set-key [f12] 'pop-global-mark) ; what is it ?
 
