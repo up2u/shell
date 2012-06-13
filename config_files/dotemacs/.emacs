@@ -532,11 +532,12 @@ Dmitriy Igrishin's patched version of comint.el."
 (require 'ecb)
 (require 'ecb-autoloads)
 (setq ecb-tip-of-the-day nil) ;; not work ??
+(setq ecb-tree-navigation-by-arrow nil) ;; not use arrow key (left right up down)
 
 ;; myself layout of ecb and scope
 (ecb-layout-define "my-cscope-layout" left nil
 (ecb-set-history-buffer)
-(ecb-split-ver 0.35 t)
+(ecb-split-ver 0.33 t)
 (other-window 1)
 (ecb-set-methods-buffer)
 ;(ecb-split-ver 0.45 t)
