@@ -3,7 +3,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/util")
 (add-to-list 'load-path "~/.emacs.d/lisp/cscope")
 (add-to-list 'load-path "~/.emacs.d/lisp/auto-complete")
-(add-to-list 'load-path "~/.emacs.d/lisp/gnuserv")
+;(add-to-list 'load-path "~/.emacs.d/lisp/gnuserv")
 (add-to-list 'load-path "~/.emacs.d/lisp/global")
 (add-to-list 'load-path "~/.emacs.d/lisp/rect-mark")
 (add-to-list 'load-path "~/.emacs.d/lisp/tabbar")
