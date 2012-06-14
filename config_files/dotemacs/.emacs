@@ -52,13 +52,14 @@
 (autoload 'rm-kill-ring-save "rect-mark"
   "Copy a rectangular region to the kill ring." t)
 
-;; gnuserv
-(require 'gnuserv-compat)
-(gnuserv-start)
-;; When loading files reuse existing frames.
-(setq gnuserv-frame (car (frame-list)))
-;;
-(setq gnuserv-frame (lambda (f) (eq f (quote x))))
+;;;;;;; gnuserv
+;;;;;(require 'gnuserv-compat)
+;;;;;(gnuserv-start)
+;;;;;;; When loading files reuse existing frames.
+;;;;;(setq gnuserv-frame (car (frame-list)))
+;;;;;;;
+;;;;;(setq gnuserv-frame (lambda (f) (eq f (quote x))))
+(server-start)
 
 ;; show files with same name
 (require 'uniquify)
