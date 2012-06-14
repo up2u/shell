@@ -510,6 +510,8 @@ Dmitriy Igrishin's patched version of comint.el."
 ;(global-srecode-minor-mode 1)  ;; need to learn more.
 (require 'semantic-tag-folding nil 'noerror)
 (global-semantic-tag-folding-mode 1)
+;; manual fresh
+(global-set-key [(control f1)] 'senator-force-refresh)
 
 ;; jump
 ;;(global-set-key [f12] 'semantic-ia-fast-jump)
