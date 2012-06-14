@@ -59,7 +59,9 @@
 ;;;;;(setq gnuserv-frame (car (frame-list)))
 ;;;;;;;
 ;;;;;(setq gnuserv-frame (lambda (f) (eq f (quote x))))
-(server-start)
+
+;;Emacs server for emacsclient
+;(server-start)
 
 ;; show files with same name
 (require 'uniquify)
