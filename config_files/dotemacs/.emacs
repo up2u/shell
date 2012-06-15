@@ -542,7 +542,7 @@ Dmitriy Igrishin's patched version of comint.el."
 ;; myself layout of ecb and scope
 (ecb-layout-define "my-cscope-layout" left nil
 (ecb-set-history-buffer)
-(ecb-split-ver 0.33 t)
+(ecb-split-ver 0.30 t)
 (other-window 1)
 (ecb-set-methods-buffer)
 ;(ecb-split-ver 0.45 t)
@@ -559,7 +559,7 @@ Dmitriy Igrishin's patched version of comint.el."
 (setq ecb-history-make-buckets 'never)
 
 ;; start at last of previous settings
-;(ecb-activate)
+(ecb-activate)
 
 ;; jump to and jump back from 王垠
 ;(global-set-key [(control ?\.)] 'ska-point-to-register)
@@ -598,7 +598,8 @@ that was stored with ska-point-to-register."
              (gtags-mode t)))
 ;; 2 useful binding, but how use its own keymap ???
 (global-set-key (kbd "C-c t") 'gtags-find-tag)
-(global-set-key (kbd "C-t")   'gtags-pop-stack)
+(global-set-key (kbd "C-r")   'gtags-pop-stack)
+(global-set-key (kbd "M-s")   'isearch-backward) ;;
 
 ;(warn "my warning msg 1: default-directory: %s" default-directory)
 ;(warn "my warning msg 1: frame-title-format:%s" frame-title-format)
@@ -615,5 +616,3 @@ that was stored with ska-point-to-register."
 (global-set-key [f1]  'next-buffer)
 (global-set-key [f11] 'kill-buffer)
 (global-set-key [f12] 'delete-window)
-;(global-set-key [f12] 'pop-global-mark) ; what is it ?
-
