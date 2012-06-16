@@ -597,9 +597,8 @@ that was stored with ska-point-to-register."
           '(lambda ()
              (gtags-mode t)))
 ;; 2 useful binding, but how use its own keymap ???
-(global-set-key (kbd "C-c t") 'gtags-find-tag)
+(global-set-key (kbd "C-c r") 'gtags-find-tag)
 (global-set-key (kbd "C-r")   'gtags-pop-stack)
-(global-set-key (kbd "M-s")   'isearch-backward) ;;
 
 ;(warn "my warning msg 1: default-directory: %s" default-directory)
 ;(warn "my warning msg 1: frame-title-format:%s" frame-title-format)
