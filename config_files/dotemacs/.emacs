@@ -566,7 +566,7 @@ Dmitriy Igrishin's patched version of comint.el."
 
 ;; ECB
 (require 'ecb)
-(require 'ecb-autoloads)
+;(require 'ecb-autoloads)
 (setq ecb-tip-of-the-day nil) ;; not work ??
 (setq ecb-tree-navigation-by-arrow nil) ;; not use arrow key (left right up down)
 
