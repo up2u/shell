@@ -24,6 +24,8 @@
 
 ;; tabbar
 (require 'tabbar)
+;; tabbar-ruler, make tabbar look pretty
+(require 'tabbar-ruler)
 (tabbar-mode t)
 (define-prefix-command 'lwindow-map)
 ;; will cross group ?
@@ -64,9 +66,6 @@
                     :inherit 'tabbar-default
                     :box '(:line-width 1 :color "gray70")
                     )
-
-;; tabbar-ruler, make tabbar look pretty
-(require 'tabbar-ruler)
 
 ;; rectangle
 (require 'rect-mark)
