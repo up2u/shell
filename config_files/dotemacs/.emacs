@@ -52,9 +52,9 @@
 ;; 设置当前tab外观：颜色，字体，外框大小和颜色
 (set-face-attribute 'tabbar-selected nil
                     :inherit 'tabbar-default
-                    :foreground "DarkGreen"
-                    :background "LightGoldenrod"
-                    :box '(:line-width 2 :color "DarkGoldenrod")
+                    :foreground "Black"
+                    :background "Yellow"
+                    :box '(:line-width 1 :color "DarkGoldenrod")
                     ;; :overline "black"
                     ;; :underline "black"
                     :weight 'bold
@@ -62,7 +62,7 @@
 ;; 设置非当前tab外观：外框大小和颜色
 (set-face-attribute 'tabbar-unselected nil
                     :inherit 'tabbar-default
-                    :box '(:line-width 2 :color "gray70")
+                    :box '(:line-width 1 :color "gray70")
                     )
 
 ;; tabbar-ruler, make tabbar look pretty
@@ -572,9 +572,9 @@ Dmitriy Igrishin's patched version of comint.el."
 
 ;; myself layout of ecb and scope
 (ecb-layout-define "my-cscope-layout" left nil
-(ecb-set-history-buffer)
-(ecb-split-ver 0.30 t)
-(other-window 1)
+;(ecb-set-history-buffer)
+;(ecb-split-ver 0.30 t)
+;(other-window 1)
 (ecb-set-methods-buffer)
 ;(ecb-split-ver 0.45 t)
 ;(other-window 1)
