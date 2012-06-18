@@ -452,7 +452,7 @@ Dmitriy Igrishin's patched version of comint.el."
 ;; none of these plese
 (scroll-bar-mode 0)
 (tool-bar-mode 0)
-;;(menu-bar-mode nil)
+(menu-bar-mode nil)
 
 ;; way better buffer-switching
 ;; ido - interactively do things with buffers and files
@@ -492,7 +492,6 @@ Dmitriy Igrishin's patched version of comint.el."
 
 ;; C-K delete line at the same time
 (setq-default kill-whole-line t)
-
 
 ;; binding
 ;(global-set-key [f1] 'goto-line)
@@ -563,34 +562,6 @@ Dmitriy Igrishin's patched version of comint.el."
 ;; hide and show macro #ifdef #endif
 ;(setq hide-ifdef-mode t)
 
-;; ECB
-(require 'ecb)
-;(require 'ecb-autoloads)
-(setq ecb-tip-of-the-day nil) ;; not work ??
-(setq ecb-tree-navigation-by-arrow nil) ;; not use arrow key (left right up down)
-
-;; myself layout of ecb and scope
-(ecb-layout-define "my-cscope-layout" left nil
-(ecb-set-sources-buffer)
-(ecb-split-ver 0.30 t)
-(other-window 1)
-(ecb-set-methods-buffer)
-;(ecb-split-ver 0.45 t)
-;(other-window 1)
-;(ecb-set-cscope-buffer)
-)
-;(defecb-window-dedicator ecb-set-cscope-buffer " *ECB cscope-buf*"
-;(switch-to-buffer "*cscope*"))
-
-(setq ecb-layout-name "my-cscope-layout")
-
-
-;; Disable buckets so that history buffer can display more entries
-(setq ecb-history-make-buckets 'never)
-
-;; start at last of previous settings
-(ecb-activate)
-
 ;; jump to and jump back from 王垠
 ;(global-set-key [(control ?\.)] 'ska-point-to-register)
 ;(global-set-key [(control ?\,)] 'ska-jump-to-register)
@@ -643,5 +614,31 @@ that was stored with ska-point-to-register."
 ;; binding for previous/next-buffer
 (global-set-key [f2]  'previous-buffer)
 (global-set-key [f1]  'next-buffer)
-(global-set-key [f11] 'kill-buffer)
-(global-set-key [f12] 'delete-window)
+(global-set-key [f12] 'kill-buffer)
+
+;; ECB
+(require 'ecb)
+;(require 'ecb-autoloads)
+(setq ecb-tip-of-the-day nil) ;; not work ??
+(setq ecb-tree-navigation-by-arrow nil) ;; not use arrow key (left right up down)
+
+;; myself layout of ecb and scope
+(ecb-layout-define "my-cscope-layout" left nil
+(ecb-set-sources-buffer)
+(ecb-split-ver 0.30 t)
+(other-window 1)
+(ecb-set-methods-buffer)
+;(ecb-split-ver 0.45 t)
+;(other-window 1)
+;(ecb-set-cscope-buffer)
+)
+;(defecb-window-dedicator ecb-set-cscope-buffer " *ECB cscope-buf*"
+;(switch-to-buffer "*cscope*"))
+
+(setq ecb-layout-name "my-cscope-layout")
+
+;; Disable buckets so that history buffer can display more entries
+(setq ecb-history-make-buckets 'never)
+
+;; start ECB
+(ecb-activate)
