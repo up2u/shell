@@ -17,22 +17,33 @@
 (defconst my-emacs-path "~/.emacs.d/")
 (defconst my-emacs-lisps-path (concat my-emacs-path "lisp"))
 
+;; default open directory
+(setq default-directory "/work/")
+;; frame title
+;(setq frame-title-format (list '(buffer-file-name "emacs@%f" (dired-directory dired-directory "emacs@%b"))))
+(setq frame-title-format '("%m @ "(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+;(warn "my warning msg 1: default-directory: %s" default-directory)
+;(warn "my warning msg 1: frame-title-format:%s" frame-title-format)
+
+;; binding for previous/next-buffer
+(global-set-key [f2]  'previous-buffer)
+(global-set-key [f1]  'next-buffer)
+(global-set-key [f12] 'kill-buffer)
+
 ;; auto revert buffers
 (global-auto-revert-mode t)
 ;; not output backtrace buffer when warning or errors
-;(setq stack-trace-on-error t)
+;(setq stack-trace-on-error t) ;; not needed
 
-;; tabbar
+;; tabbar + tabbar-ruler
 (require 'tabbar)
 ;; tabbar-ruler, make tabbar look pretty
 (require 'tabbar-ruler)
 (tabbar-mode t)
 (define-prefix-command 'lwindow-map)
-;; will cross group ?
-;(global-set-key (kbd "<M-left>")  'tabbar-backward)
+;(global-set-key (kbd "<M-left>")  'tabbar-backward);; will cross group ?
 ;(global-set-key (kbd "<M-right>") 'tabbar-forward)
-;;will not cross group ?
-(global-set-key (kbd "<M-left>")  'tabbar-backward-tab)
+(global-set-key (kbd "<M-left>")  'tabbar-backward-tab);;will not cross group ?
 (global-set-key (kbd "<M-right>") 'tabbar-forward-tab)
 (global-set-key (kbd "<M-up>")    'tabbar-backward-group)
 (global-set-key (kbd "<M-down>")  'tabbar-forward-group)
@@ -600,21 +611,6 @@ that was stored with ska-point-to-register."
 ;; 2 useful binding, but how use its own keymap ???
 (global-set-key (kbd "C-c r") 'gtags-find-tag)
 (global-set-key (kbd "C-r")   'gtags-pop-stack)
-
-;(warn "my warning msg 1: default-directory: %s" default-directory)
-;(warn "my warning msg 1: frame-title-format:%s" frame-title-format)
-
-;; default open directory
-(setq default-directory "/work/")
-
-;; set frame title
-;(setq frame-title-format (list '(buffer-file-name "emacs@%f" (dired-directory dired-directory "emacs@%b"))))
-(setq frame-title-format '("%m @ "(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
-
-;; binding for previous/next-buffer
-(global-set-key [f2]  'previous-buffer)
-(global-set-key [f1]  'next-buffer)
-(global-set-key [f12] 'kill-buffer)
 
 ;; ECB
 (require 'ecb)
