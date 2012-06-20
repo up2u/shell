@@ -7,6 +7,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/global")
 (add-to-list 'load-path "~/.emacs.d/lisp/rect-mark")
 (add-to-list 'load-path "~/.emacs.d/lisp/tabbar")
+(add-to-list 'load-path "~/.emacs.d/lisp/speedbar")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/common/")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/semantic/")
 ;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.0.1/common/")
@@ -34,6 +35,49 @@
 (global-auto-revert-mode t)
 ;; not output backtrace buffer when warning or errors
 ;(setq stack-trace-on-error t) ;; not needed
+
+;; sr-speedbar
+(require 'sr-speedbar)
+(require 'speedbar-extension)
+(setq sr-speedbar-right-side nil)
+(setq sr-speedbar-width 25)
+;; Show all files
+;(setq speedbar-show-unknown-files t)
+;; fix speedbar in left, and set auto raise mode
+;;(add-hook
+;;'speedbar-mode-hook
+;;(lambda ()
+;;(auto-raise-mode 1)
+;;(add-to-list 'speedbar-frame-parameters '(top . 30))
+;;(add-to-list 'speedbar-frame-parameters '(left . 0))))
+
+;; inhibit tags grouping and sorting
+(setq speedbar-tag-hierarchy-method
+'(speedbar-simple-group-tag-hierarchy)
+)
+(defun speedbar-expand-all-lines ()
+  "Expand all items in the speedbar buffer.
+ But be careful: this opens all the files to parse them."
+  (interactive)
+  (goto-char (point-min))
+  (while (not (eobp))
+    (forward-line)
+    (speedbar-expand-line)))
+;;(defun speedbar-expand-all-lines ()
+;;  (interactive)
+;;  (goto-char (0))
+;;  (while (not (0))
+;;    (forward-line)
+;;    (speedbar-expand-line)))
+
+
+;;(defcustom speedbar-tag-hierarchy-method
+;;'(speedbar-prefix-group-tag-hierarchy
+;;speedbar-trim-words-tag-hierarchy))
+
+;; start speedbar if we're using a window system
+(when window-system
+  (sr-speedbar-open))
 
 ;; tabbar + tabbar-ruler
 (require 'tabbar)
@@ -507,6 +551,19 @@ Dmitriy Igrishin's patched version of comint.el."
 ;; binding
 ;(global-set-key [f1] 'goto-line)
 (global-set-key "\M-q" 'other-window)
+;; make other-window ignore a certain window
+(defvar ignore-windows-containing-buffers-matching-res '("\\*Help" "Speedbar\\*" "Minibuf\\*")
+  "List of regular expressions specifying windows to skip (if window contains buffer that matches, skip)")
+
+(defadvice other-window (before other-window-ignore-windows-containing activate)
+  "skip over windows containing buffers which match regular expressions in 'ignore-windows-containing-buffers-matching-res"
+  (if (and (= 1 (ad-get-arg 0)) (interactive-p))
+      (let* ((win (next-window))
+             (bname (buffer-name (window-buffer win))))
+        (when (some 'identity (mapcar '(lambda (re)
+                                         (string-match re bname))
+                                      ignore-windows-containing-buffers-matching-res))
+          (ad-set-arg 0 2)))))
 
 ;; line and column num
 (global-linum-mode t)
@@ -637,4 +694,4 @@ that was stored with ska-point-to-register."
 (setq ecb-history-make-buckets 'never)
 
 ;; start ECB
-(ecb-activate)
+;(ecb-activate)
