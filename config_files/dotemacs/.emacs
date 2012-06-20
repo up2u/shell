@@ -36,6 +36,12 @@
 ;; not output backtrace buffer when warning or errors
 ;(setq stack-trace-on-error t) ;; not needed
 
+;; code folding
+(add-hook 'c-mode-hook 'hs-minor-mode)
+(add-hook 'c++-mode-hook 'hs-minor-mode)
+(global-set-key [f11] 'hs-hide-all)
+(global-set-key [(shift f11)] 'hs-show-all)
+
 ;; sr-speedbar
 (require 'sr-speedbar)
 (require 'speedbar-extension)
@@ -600,8 +606,6 @@ Dmitriy Igrishin's patched version of comint.el."
 ;; Warning:cedet-called-interactively-p called with 0 arguments, but requires 1
 (setq byte-compile-warnings nil)
 (require 'cedet)
-;; Enable EDE (Project Management) features
-(global-ede-mode 1)
 ;(require 'semantic)
 ;(semantic-load-enable-minimum-features)
 (semantic-load-enable-code-helpers)
@@ -611,6 +615,13 @@ Dmitriy Igrishin's patched version of comint.el."
 ;(global-srecode-minor-mode 1)  ;; need to learn more.
 (require 'semantic-tag-folding nil 'noerror)
 (global-semantic-tag-folding-mode 1)
+(global-set-key (kbd "C-?") 'global-semantic-tag-folding-mode)
+;; from http://emacser.com/cedet.htm
+(define-key semantic-tag-folding-mode-map (kbd "C-c , -") 'semantic-tag-folding-fold-block)
+(define-key semantic-tag-folding-mode-map (kbd "C-c , +") 'semantic-tag-folding-show-block)
+(define-key semantic-tag-folding-mode-map (kbd "C-_") 'semantic-tag-folding-fold-all)
+(define-key semantic-tag-folding-mode-map (kbd "C-+") 'semantic-tag-folding-show-all)
+
 ;; manual fresh
 (global-set-key [(control f1)] 'senator-force-refresh)
 
