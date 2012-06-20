@@ -40,7 +40,7 @@
 (require 'sr-speedbar)
 (require 'speedbar-extension)
 (setq sr-speedbar-right-side nil)
-(setq sr-speedbar-width 25)
+;(setq sr-speedbar-width 25)
 ;; Show all files
 ;(setq speedbar-show-unknown-files t)
 ;; fix speedbar in left, and set auto raise mode
@@ -55,21 +55,20 @@
 (setq speedbar-tag-hierarchy-method
 '(speedbar-simple-group-tag-hierarchy)
 )
-(defun speedbar-expand-all-lines ()
-  "Expand all items in the speedbar buffer.
- But be careful: this opens all the files to parse them."
-  (interactive)
-  (goto-char (point-min))
-  (while (not (eobp))
-    (forward-line)
-    (speedbar-expand-line)))
+;;;;(defun speedbar-expand-all-lines ()
+;;;;  "Expand all items in the speedbar buffer.
+;;;; But be careful: this opens all the files to parse them."
+;;;;  (interactive)
+;;;;  (goto-char (point-min))
+;;;;  (while (not (eobp))
+;;;;    (forward-line)
+;;;;    (speedbar-expand-line)))
 ;;(defun speedbar-expand-all-lines ()
 ;;  (interactive)
 ;;  (goto-char (0))
 ;;  (while (not (0))
 ;;    (forward-line)
 ;;    (speedbar-expand-line)))
-
 
 ;;(defcustom speedbar-tag-hierarchy-method
 ;;'(speedbar-prefix-group-tag-hierarchy
