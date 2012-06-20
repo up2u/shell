@@ -600,6 +600,8 @@ Dmitriy Igrishin's patched version of comint.el."
 ;; Warning:cedet-called-interactively-p called with 0 arguments, but requires 1
 (setq byte-compile-warnings nil)
 (require 'cedet)
+;; Enable EDE (Project Management) features
+(global-ede-mode 1)
 ;(require 'semantic)
 ;(semantic-load-enable-minimum-features)
 (semantic-load-enable-code-helpers)
@@ -668,29 +670,29 @@ that was stored with ska-point-to-register."
 (global-set-key (kbd "C-c r") 'gtags-find-tag)
 (global-set-key (kbd "C-r")   'gtags-pop-stack)
 
-;; ECB
-(require 'ecb)
-;(require 'ecb-autoloads)
-(setq ecb-tip-of-the-day nil) ;; not work ??
-(setq ecb-tree-navigation-by-arrow nil) ;; not use arrow key (left right up down)
-
-;; myself layout of ecb and scope
-(ecb-layout-define "my-cscope-layout" left nil
-(ecb-set-sources-buffer)
-(ecb-split-ver 0.30 t)
-(other-window 1)
-(ecb-set-methods-buffer)
-;(ecb-split-ver 0.45 t)
-;(other-window 1)
-;(ecb-set-cscope-buffer)
-)
-;(defecb-window-dedicator ecb-set-cscope-buffer " *ECB cscope-buf*"
-;(switch-to-buffer "*cscope*"))
-
-(setq ecb-layout-name "my-cscope-layout")
-
-;; Disable buckets so that history buffer can display more entries
-(setq ecb-history-make-buckets 'never)
-
-;; start ECB
-;(ecb-activate)
+;;;;;;; ECB
+;;;;;(require 'ecb)
+;;;;;;(require 'ecb-autoloads)
+;;;;;(setq ecb-tip-of-the-day nil) ;; not work ??
+;;;;;(setq ecb-tree-navigation-by-arrow nil) ;; not use arrow key (left right up down)
+;;;;;
+;;;;;;; myself layout of ecb and scope
+;;;;;(ecb-layout-define "my-cscope-layout" left nil
+;;;;;(ecb-set-sources-buffer)
+;;;;;(ecb-split-ver 0.30 t)
+;;;;;(other-window 1)
+;;;;;(ecb-set-methods-buffer)
+;;;;;;(ecb-split-ver 0.45 t)
+;;;;;;(other-window 1)
+;;;;;;(ecb-set-cscope-buffer)
+;;;;;)
+;;;;;;(defecb-window-dedicator ecb-set-cscope-buffer " *ECB cscope-buf*"
+;;;;;;(switch-to-buffer "*cscope*"))
+;;;;;
+;;;;;(setq ecb-layout-name "my-cscope-layout")
+;;;;;
+;;;;;;; Disable buckets so that history buffer can display more entries
+;;;;;(setq ecb-history-make-buckets 'never)
+;;;;;
+;;;;;;; start ECB
+;;;;;;(ecb-activate)
