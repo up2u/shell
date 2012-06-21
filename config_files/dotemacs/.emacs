@@ -8,10 +8,10 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/rect-mark")
 (add-to-list 'load-path "~/.emacs.d/lisp/tabbar")
 (add-to-list 'load-path "~/.emacs.d/lisp/speedbar")
-(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/common/")
-(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/semantic/")
-;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.0.1/common/")
-;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.0.1/semantic/")
+;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/common/")
+;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/semantic/")
+(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.0.1/common/")
+(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.0.1/semantic/")
 (add-to-list 'load-path "~/.emacs.d/lisp/ecb-2.40/")
 
 ;;customize defined variable to storing path
@@ -40,7 +40,8 @@
 (add-hook 'c-mode-hook 'hs-minor-mode)
 (add-hook 'c++-mode-hook 'hs-minor-mode)
 (global-set-key [f11] 'hs-hide-all)
-(global-set-key [(shift f11)] 'hs-show-all)
+(global-set-key [(shift f11)]  'hs-show-all)
+(global-set-key [(control f11)] 'hs-toggle-hiding)
 
 ;; sr-speedbar
 (require 'sr-speedbar)
@@ -617,10 +618,10 @@ Dmitriy Igrishin's patched version of comint.el."
 (global-semantic-tag-folding-mode 1)
 (global-set-key (kbd "C-?") 'global-semantic-tag-folding-mode)
 ;; from http://emacser.com/cedet.htm
-(define-key semantic-tag-folding-mode-map (kbd "C-c , -") 'semantic-tag-folding-fold-block)
-(define-key semantic-tag-folding-mode-map (kbd "C-c , +") 'semantic-tag-folding-show-block)
-(define-key semantic-tag-folding-mode-map (kbd "C-_") 'semantic-tag-folding-fold-all)
-(define-key semantic-tag-folding-mode-map (kbd "C-+") 'semantic-tag-folding-show-all)
+;;;;;(define-key semantic-tag-folding-mode-map (kbd "C-c , -") 'semantic-tag-folding-fold-block)
+;;;;;(define-key semantic-tag-folding-mode-map (kbd "C-c , +") 'semantic-tag-folding-show-block)
+;;;;;(define-key semantic-tag-folding-mode-map (kbd "C-_") 'semantic-tag-folding-fold-all)
+;;;;;(define-key semantic-tag-folding-mode-map (kbd "C-+") 'semantic-tag-folding-show-all)
 
 ;; manual fresh
 (global-set-key [(control f1)] 'senator-force-refresh)
