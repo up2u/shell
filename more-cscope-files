@@ -14,23 +14,32 @@ if [ $# = 0 ]; then
     usage
 fi
 
-yesorno=
-if [ ! -f cscope.files ]; then
-    echo "NOTE: cscope.files not exist, Is path right"
-    echo -n "Use cscope-indexer -r firstly ? yes or no : "
-    read yesorno
-    if [ "${yesorno}"  = "yes" ]; then
-        cscope-indexer -r
-        if [ $? -eq 1 ]; then
-            echo "cscope-indexer -r failed"
-            rm cscope.files
-            echo -e "Please check path now !!\n"
-            exit 1
-        fi
-    fi
-    if [ "${yesorno}" = "no" ]; then
-        echo "new cscope.files generated"
-    fi
+##yesorno=
+##if [ ! -f cscope.files ]; then
+##    echo "NOTE: cscope.files not exist, Is path right"
+##    echo -n "Use cscope-indexer -r firstly ? yes or no : "
+##    read yesorno
+##    if [ "${yesorno}"  = "yes" ]; then
+##        cscope-indexer -r
+##        if [ $? -eq 1 ]; then
+##            echo "cscope-indexer -r failed"
+##            rm cscope.files
+##            echo -e "Please check path now !!\n"
+##            exit 1
+##        fi
+##    fi
+##    if [ "${yesorno}" = "no" ]; then
+##        echo "new cscope.files generated"
+##    fi
+##fi
+
+
+#use cscope-indexer to refresh
+cscope-indexer -r
+if [ $? -eq 1 ]; then
+    echo "cscope-indexer -r failed"
+    rm cscope.files
+    exit 1
 fi
 
 PREVIOUS_OPTION=
@@ -69,9 +78,11 @@ done
 for suf in ${SUFFIX} ;do
     find . -name "*.$suf" >> cscope.files
 done
-
 for pre in ${PREFIX} ;do
     find . -name "$pre*" >> cscope.files
 done
+
+# continue
+cscope -q -b -i cscope.files -f cscope.out
 
 exit $?
