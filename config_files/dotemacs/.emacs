@@ -513,7 +513,7 @@ Dmitriy Igrishin's patched version of comint.el."
 ;; none of these plese
 (scroll-bar-mode 0)
 (tool-bar-mode 0)
-(menu-bar-mode nil)
+(menu-bar-mode 0)
 
 ;; way better buffer-switching
 ;; ido - interactively do things with buffers and files
