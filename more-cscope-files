@@ -1,0 +1,77 @@
+#! /bin/sh
+#set -x
+
+SUFFIX=
+PREFIX=
+
+usage()
+{
+    echo -e "\n Usage: $0 -s file's suffix name [eg: -s s S] or -p file's prefix name [eg: -p Makefile makefile]\n"
+    exit 1
+}
+
+if [ $# = 0 ]; then
+    usage
+fi
+
+yesorno=
+if [ ! -f cscope.files ]; then
+    echo "NOTE: cscope.files not exist, Is path right"
+    echo -n "Use cscope-indexer -r firstly ? yes or no : "
+    read yesorno
+    if [ "${yesorno}"  = "yes" ]; then
+        cscope-indexer -r
+        if [ $? -eq 1 ]; then
+            echo "cscope-indexer -r failed"
+            rm cscope.files
+            echo -e "Please check path now !!\n"
+            exit 1
+        fi
+    fi
+    if [ "${yesorno}" = "no" ]; then
+        echo "new cscope.files generated"
+    fi
+fi
+
+PREVIOUS_OPTION=
+while [ -n "$1" ]
+do
+    case "$1" in
+        -s)
+            PREVIOUS_OPTION="$1"
+            if [ "X$2" != "X" ]; then
+                shift
+            fi
+            ;;
+        -p)
+            PREVIOUS_OPTION="$1"
+            if [ "X$2" != "X" ]; then
+                shift
+            fi
+            ;;
+        -*) #from now, not support other option execupt -s -p
+            echo -e "\n NOTE: from now, not support other option execupt -s -p"
+            usage
+            ;;
+        *)
+            if [ "${PREVIOUS_OPTION}" == "-s" ]; then
+                SUFFIX="${SUFFIX} ${1}"
+            fi
+            if [ "${PREVIOUS_OPTION}" == "-p" ]; then
+                PREFIX="${PREFIX} ${1}"
+            fi
+            shift
+            ;;
+    esac
+done
+
+# find files and redirecto to cscope.files
+for suf in ${SUFFIX} ;do
+    find . -name "*.$suf" >> cscope.files
+done
+
+for pre in ${PREFIX} ;do
+    find . -name "$pre*" >> cscope.files
+done
+
+exit $?
