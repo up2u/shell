@@ -706,3 +706,10 @@ that was stored with ska-point-to-register."
 ;;;;;
 ;;;;;;; start ECB
 ;;;;;;(ecb-activate)
+
+;; C-x C-j open the directory of current buffer
+(global-set-key (kbd "C-x C-j")
+                (lambda ()
+                  (interactive)
+                  (if (buffer-file-name)
+                      (dired default-directory))))
