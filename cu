@@ -2,6 +2,7 @@
 set -x
 
 more-cscope-files
-global -u
+#global -u
+gtags -f cscope.files
 
 exit $?
