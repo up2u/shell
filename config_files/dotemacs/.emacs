@@ -3,7 +3,6 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/util")
 (add-to-list 'load-path "~/.emacs.d/lisp/cscope")
 (add-to-list 'load-path "~/.emacs.d/lisp/auto-complete")
-;(add-to-list 'load-path "~/.emacs.d/lisp/gnuserv")
 (add-to-list 'load-path "~/.emacs.d/lisp/global")
 (add-to-list 'load-path "~/.emacs.d/lisp/rect-mark")
 (add-to-list 'load-path "~/.emacs.d/lisp/tabbar")
@@ -707,6 +706,11 @@ that was stored with ska-point-to-register."
 ;;;;;;; start ECB
 ;;;;;;(ecb-activate)
 
+;(add-to-list 'load-path "~/.emacs.d/lisp/dired/")
+;;;;;;; dired
+;;;;;(require 'dired-x)
+;;;;;;; Enable toggling of uninteresting files.
+;;;;;(setq dired-omit-files-p t)
 ;; C-x C-j open the directory of current buffer
 (global-set-key (kbd "C-x C-j")
                 (lambda ()
