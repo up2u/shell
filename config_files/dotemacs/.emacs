@@ -11,7 +11,6 @@
 ;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/semantic/")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.0.1/common/")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.0.1/semantic/")
-(add-to-list 'load-path "~/.emacs.d/lisp/ecb-2.40/")
 
 ;;customize defined variable to storing path
 (defconst my-emacs-path "~/.emacs.d/")
@@ -679,6 +678,7 @@ that was stored with ska-point-to-register."
 (global-set-key (kbd "C-t") 'gtags-find-tag)
 (global-set-key (kbd "C-r") 'gtags-pop-stack)
 
+;(add-to-list 'load-path "~/.emacs.d/lisp/ecb-2.40/")
 ;;;;;;; ECB
 ;;;;;(require 'ecb)
 ;;;;;;(require 'ecb-autoloads)
