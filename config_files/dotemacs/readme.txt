@@ -12,4 +12,8 @@ origin	git://github.com/alexott/ecb.git (push)
   remotes/origin/master
   remotes/origin/new-cedet
 
-3:
+3: new branch
+  git co -b newcedet origin/new-cedet
+
+4: update
+   git pull origin new-cedet:newcedet
