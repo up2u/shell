@@ -123,9 +123,9 @@
 ;; rectangle
 (require 'rect-mark)
 (global-set-key (kbd "C-@") 'rm-set-mark)
-(global-set-key (kbd "C-x r C-x") 'rm-exchange-point-and-mark)
-(global-set-key (kbd "C-x r C-w") 'rm-kill-region)
-(global-set-key (kbd "C-x r M-w") 'rm-kill-ring-save)
+;;  (global-set-key (kbd "C-x r C-x") 'rm-exchange-point-and-mark)
+;;  (global-set-key (kbd "C-x r C-w") 'rm-kill-region)
+;;  (global-set-key (kbd "C-x r M-w") 'rm-kill-ring-save)
 (autoload 'rm-set-mark "rect-mark"
   "Set mark for rectangle." t)
 (autoload 'rm-exchange-point-and-mark "rect-mark"
@@ -669,7 +669,7 @@ that was stored with ska-point-to-register."
           '(lambda ()
              (gtags-mode t)))
 ;; 2 useful binding, but how use its own keymap ???
-(global-set-key (kbd "M-t") 'gtags-find-tag)
+(global-set-key (kbd "M-e") 'gtags-find-tag)
 (global-set-key (kbd "M-r") 'gtags-pop-stack)
 
 ;(add-to-list 'load-path "~/.emacs.d/lisp/dired/")
