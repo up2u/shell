@@ -35,13 +35,6 @@
 ;; not output backtrace buffer when warning or errors
 ;(setq stack-trace-on-error t) ;; not needed
 
-;; code folding
-(add-hook 'c-mode-hook 'hs-minor-mode)
-(add-hook 'c++-mode-hook 'hs-minor-mode)
-(global-set-key [f11] 'hs-hide-all)
-(global-set-key [(shift f11)]  'hs-show-all)
-(global-set-key [(control f11)] 'hs-toggle-hiding)
-
 ;;;;;  ;; sr-speedbar
 ;;;;;  (require 'sr-speedbar)
 ;;;;;  (require 'speedbar-extension)
@@ -679,34 +672,6 @@ that was stored with ska-point-to-register."
 (global-set-key (kbd "C-t") 'gtags-find-tag)
 (global-set-key (kbd "C-r") 'gtags-pop-stack)
 
-;(add-to-list 'load-path "~/.emacs.d/lisp/ecb-2.40/")
-;; ECB
-(require 'ecb)
-;(require 'ecb-autoloads)
-(setq ecb-tip-of-the-day nil) ;; not work ??
-(setq ecb-tree-navigation-by-arrow nil) ;; not use arrow key (left right up down)
-
-;; myself layout of ecb and scope
-(ecb-layout-define "my-cscope-layout" left nil
-(ecb-set-sources-buffer)
-(ecb-split-ver 0.30 t)
-(other-window 1)
-(ecb-set-methods-buffer)
-;(ecb-split-ver 0.45 t)
-;(other-window 1)
-;(ecb-set-cscope-buffer)
-)
-;(defecb-window-dedicator ecb-set-cscope-buffer " *ECB cscope-buf*"
-;(switch-to-buffer "*cscope*"))
-
-(setq ecb-layout-name "my-cscope-layout")
-
-;; Disable buckets so that history buffer can display more entries
-(setq ecb-history-make-buckets 'never)
-
-;; start ECB
-(ecb-activate)
-
 ;(add-to-list 'load-path "~/.emacs.d/lisp/dired/")
 ;;;;;;; dired
 ;;;;;(require 'dired-x)
@@ -753,3 +718,37 @@ that was stored with ska-point-to-register."
 ;  (interactive)
 ;  (define-key dired-mode-map (kbd "<ESC-up>") 'dired-up-directory)
 ;  (define-key dired-mode-map (kbd "<M-up>")   'dired-up-directory)))
+
+;; ECB
+(require 'ecb)
+;(require 'ecb-autoloads)
+(setq ecb-tip-of-the-day nil) ;; not work ??
+(setq ecb-tree-navigation-by-arrow nil) ;; not use arrow key (left right up down)
+
+;; myself layout of ecb and scope
+(ecb-layout-define "my-cscope-layout" left nil
+(ecb-set-sources-buffer)
+(ecb-split-ver 0.30 t)
+(other-window 1)
+(ecb-set-methods-buffer)
+;(ecb-split-ver 0.45 t)
+;(other-window 1)
+;(ecb-set-cscope-buffer)
+)
+;(defecb-window-dedicator ecb-set-cscope-buffer " *ECB cscope-buf*"
+;(switch-to-buffer "*cscope*"))
+
+(setq ecb-layout-name "my-cscope-layout")
+
+;; Disable buckets so that history buffer can display more entries
+(setq ecb-history-make-buckets 'never)
+
+;; start ECB
+(ecb-activate)
+
+;; code folding
+(add-hook 'c-mode-hook 'hs-minor-mode)
+(add-hook 'c++-mode-hook 'hs-minor-mode)
+(global-set-key [f11] 'hs-hide-all)
+(global-set-key [(shift f11)]  'hs-show-all)
+(global-set-key [(control f11)] 'hs-toggle-hiding)
