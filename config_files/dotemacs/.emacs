@@ -669,8 +669,8 @@ that was stored with ska-point-to-register."
           '(lambda ()
              (gtags-mode t)))
 ;; 2 useful binding, but how use its own keymap ???
-(global-set-key (kbd "C-t") 'gtags-find-tag)
-(global-set-key (kbd "C-r") 'gtags-pop-stack)
+(global-set-key (kbd "M-t") 'gtags-find-tag)
+(global-set-key (kbd "M-r") 'gtags-pop-stack)
 
 ;(add-to-list 'load-path "~/.emacs.d/lisp/dired/")
 ;;;;;;; dired
