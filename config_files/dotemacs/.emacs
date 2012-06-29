@@ -555,7 +555,7 @@ Dmitriy Igrishin's patched version of comint.el."
 ;; binding
 (global-set-key "\M-q" 'other-window)
 ;; make other-window ignore a certain window
-(defvar ignore-windows-containing-buffers-matching-res '("\\*Help" "Speedbar\\*" "Minibuf\\*")
+(defvar ignore-windows-containing-buffers-matching-res '("\\*Help" "\\*ECB\\*" "Speedbar\\*" "Minibuf\\*")
   "List of regular expressions specifying windows to skip (if window contains buffer that matches, skip)")
 
 (defadvice other-window (before other-window-ignore-windows-containing activate)
