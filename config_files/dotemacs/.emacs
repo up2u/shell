@@ -638,8 +638,8 @@ that was stored with ska-point-to-register."
 (global-set-key (kbd "M-e") 'gtags-find-tag)
 (global-set-key (kbd "M-r") 'gtags-pop-stack)
 
-;; C-x C-j open the directory of current buffer
-(global-set-key (kbd "C-x C-j")
+;; C-x j open the directory of current buffer
+(global-set-key (kbd "C-x j")
                 (lambda ()
                   (interactive)
                   (if (buffer-file-name)
