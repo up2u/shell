@@ -7,10 +7,11 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/rect-mark")
 (add-to-list 'load-path "~/.emacs.d/lisp/tabbar")
 (add-to-list 'load-path "~/.emacs.d/lisp/speedbar")
-;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/common/")
-;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/semantic/")
-(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.0.1/common/")
-(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.0.1/semantic/")
+(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/common/")
+(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/semantic/")
+;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.0.1/common/")
+;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.0.1/semantic/")
+(add-to-list 'load-path "~/.emacs.d/lisp/ecb-newcedet/")
 
 ;;customize defined variable to storing path
 (defconst my-emacs-path "~/.emacs.d/")
@@ -41,47 +42,47 @@
 (global-set-key [(shift f11)]  'hs-show-all)
 (global-set-key [(control f11)] 'hs-toggle-hiding)
 
-;; sr-speedbar
-(require 'sr-speedbar)
-(require 'speedbar-extension)
-(setq sr-speedbar-right-side nil)
-;(setq sr-speedbar-width 25)
-;; Show all files
-;(setq speedbar-show-unknown-files t)
-;; fix speedbar in left, and set auto raise mode
-;;(add-hook
-;;'speedbar-mode-hook
-;;(lambda ()
-;;(auto-raise-mode 1)
-;;(add-to-list 'speedbar-frame-parameters '(top . 30))
-;;(add-to-list 'speedbar-frame-parameters '(left . 0))))
-
-;; inhibit tags grouping and sorting
-(setq speedbar-tag-hierarchy-method
-'(speedbar-simple-group-tag-hierarchy)
-)
-;;;;(defun speedbar-expand-all-lines ()
-;;;;  "Expand all items in the speedbar buffer.
-;;;; But be careful: this opens all the files to parse them."
-;;;;  (interactive)
-;;;;  (goto-char (point-min))
-;;;;  (while (not (eobp))
-;;;;    (forward-line)
-;;;;    (speedbar-expand-line)))
-;;(defun speedbar-expand-all-lines ()
-;;  (interactive)
-;;  (goto-char (0))
-;;  (while (not (0))
-;;    (forward-line)
-;;    (speedbar-expand-line)))
-
-;;(defcustom speedbar-tag-hierarchy-method
-;;'(speedbar-prefix-group-tag-hierarchy
-;;speedbar-trim-words-tag-hierarchy))
-
-;; start speedbar if we're using a window system
-(when window-system
-  (sr-speedbar-open))
+;;;;;  ;; sr-speedbar
+;;;;;  (require 'sr-speedbar)
+;;;;;  (require 'speedbar-extension)
+;;;;;  (setq sr-speedbar-right-side nil)
+;;;;;  ;(setq sr-speedbar-width 25)
+;;;;;  ;; Show all files
+;;;;;  ;(setq speedbar-show-unknown-files t)
+;;;;;  ;; fix speedbar in left, and set auto raise mode
+;;;;;  ;;(add-hook
+;;;;;  ;;'speedbar-mode-hook
+;;;;;  ;;(lambda ()
+;;;;;  ;;(auto-raise-mode 1)
+;;;;;  ;;(add-to-list 'speedbar-frame-parameters '(top . 30))
+;;;;;  ;;(add-to-list 'speedbar-frame-parameters '(left . 0))))
+;;;;;
+;;;;;  ;; inhibit tags grouping and sorting
+;;;;;  (setq speedbar-tag-hierarchy-method
+;;;;;  '(speedbar-simple-group-tag-hierarchy)
+;;;;;  )
+;;;;;  ;;;;(defun speedbar-expand-all-lines ()
+;;;;;  ;;;;  "Expand all items in the speedbar buffer.
+;;;;;  ;;;; But be careful: this opens all the files to parse them."
+;;;;;  ;;;;  (interactive)
+;;;;;  ;;;;  (goto-char (point-min))
+;;;;;  ;;;;  (while (not (eobp))
+;;;;;  ;;;;    (forward-line)
+;;;;;  ;;;;    (speedbar-expand-line)))
+;;;;;  ;;(defun speedbar-expand-all-lines ()
+;;;;;  ;;  (interactive)
+;;;;;  ;;  (goto-char (0))
+;;;;;  ;;  (while (not (0))
+;;;;;  ;;    (forward-line)
+;;;;;  ;;    (speedbar-expand-line)))
+;;;;;
+;;;;;  ;;(defcustom speedbar-tag-hierarchy-method
+;;;;;  ;;'(speedbar-prefix-group-tag-hierarchy
+;;;;;  ;;speedbar-trim-words-tag-hierarchy))
+;;;;;
+;;;;;  ;; start speedbar if we're using a window system
+;;;;;  (when window-system
+;;;;;    (sr-speedbar-open))
 
 ;; tabbar + tabbar-ruler
 (require 'tabbar)
@@ -590,7 +591,7 @@ Dmitriy Igrishin's patched version of comint.el."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
-; '(ecb-options-version "2.40")
+ '(ecb-options-version "2.40")
  '(ido-ignore-files (quote ("\\.out" "\\.a" "\\.o" "\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -679,32 +680,32 @@ that was stored with ska-point-to-register."
 (global-set-key (kbd "C-r") 'gtags-pop-stack)
 
 ;(add-to-list 'load-path "~/.emacs.d/lisp/ecb-2.40/")
-;;;;;;; ECB
-;;;;;(require 'ecb)
-;;;;;;(require 'ecb-autoloads)
-;;;;;(setq ecb-tip-of-the-day nil) ;; not work ??
-;;;;;(setq ecb-tree-navigation-by-arrow nil) ;; not use arrow key (left right up down)
-;;;;;
-;;;;;;; myself layout of ecb and scope
-;;;;;(ecb-layout-define "my-cscope-layout" left nil
-;;;;;(ecb-set-sources-buffer)
-;;;;;(ecb-split-ver 0.30 t)
-;;;;;(other-window 1)
-;;;;;(ecb-set-methods-buffer)
-;;;;;;(ecb-split-ver 0.45 t)
-;;;;;;(other-window 1)
-;;;;;;(ecb-set-cscope-buffer)
-;;;;;)
-;;;;;;(defecb-window-dedicator ecb-set-cscope-buffer " *ECB cscope-buf*"
-;;;;;;(switch-to-buffer "*cscope*"))
-;;;;;
-;;;;;(setq ecb-layout-name "my-cscope-layout")
-;;;;;
-;;;;;;; Disable buckets so that history buffer can display more entries
-;;;;;(setq ecb-history-make-buckets 'never)
-;;;;;
-;;;;;;; start ECB
-;;;;;;(ecb-activate)
+;; ECB
+(require 'ecb)
+;(require 'ecb-autoloads)
+(setq ecb-tip-of-the-day nil) ;; not work ??
+(setq ecb-tree-navigation-by-arrow nil) ;; not use arrow key (left right up down)
+
+;; myself layout of ecb and scope
+(ecb-layout-define "my-cscope-layout" left nil
+(ecb-set-sources-buffer)
+(ecb-split-ver 0.30 t)
+(other-window 1)
+(ecb-set-methods-buffer)
+;(ecb-split-ver 0.45 t)
+;(other-window 1)
+;(ecb-set-cscope-buffer)
+)
+;(defecb-window-dedicator ecb-set-cscope-buffer " *ECB cscope-buf*"
+;(switch-to-buffer "*cscope*"))
+
+(setq ecb-layout-name "my-cscope-layout")
+
+;; Disable buckets so that history buffer can display more entries
+(setq ecb-history-make-buckets 'never)
+
+;; start ECB
+(ecb-activate)
 
 ;(add-to-list 'load-path "~/.emacs.d/lisp/dired/")
 ;;;;;;; dired
