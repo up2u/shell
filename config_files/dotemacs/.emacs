@@ -9,8 +9,6 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/speedbar")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/common/")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/semantic/")
-;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.0.1/common/")
-;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.0.1/semantic/")
 (add-to-list 'load-path "~/.emacs.d/lisp/ecb-newcedet/")
 
 ;;customize defined variable to storing path
@@ -20,10 +18,7 @@
 ;; default open directory
 (setq default-directory "/work/")
 ;; frame title
-;(setq frame-title-format (list '(buffer-file-name "emacs@%f" (dired-directory dired-directory "emacs@%b"))))
 (setq frame-title-format '("%m @ "(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
-;(warn "my warning msg 1: default-directory: %s" default-directory)
-;(warn "my warning msg 1: frame-title-format:%s" frame-title-format)
 
 ;; binding for previous/next-buffer
 (global-set-key [f2]  'previous-buffer)
@@ -134,17 +129,6 @@
   "Kill a rectangular region and save it in the kill ring." t)
 (autoload 'rm-kill-ring-save "rect-mark"
   "Copy a rectangular region to the kill ring." t)
-
-;;;;;;; gnuserv
-;;;;;(require 'gnuserv-compat)
-;;;;;(gnuserv-start)
-;;;;;;; When loading files reuse existing frames.
-;;;;;(setq gnuserv-frame (car (frame-list)))
-;;;;;;;
-;;;;;(setq gnuserv-frame (lambda (f) (eq f (quote x))))
-
-;;Emacs server for emacsclient
-;(server-start)
 
 ;; show files with same name
 (require 'uniquify)
@@ -312,7 +296,7 @@ Dmitriy Igrishin's patched version of comint.el."
   (setq ac-sources
         '(ac-source-yasnippet
           ac-source-dictionary
-          ;; ac-source-semantic
+          ac-source-semantic
           ac-source-abbrev
           ac-source-words-in-buffer
           ac-source-words-in-same-mode-buffers
@@ -431,10 +415,6 @@ Dmitriy Igrishin's patched version of comint.el."
 
 ;; minibuf
 (setq enable-recursive-minibuffers t)
-
-;;Scrolling without moving the point, not work ?
-;;(setq scroll-conservatively 10000)
-;;(setq scroll-preserve-screen-position t)
 
 ;; selected region to upcase/downcase
 (put 'upcase-region 'disabled nil)
@@ -616,20 +596,6 @@ Dmitriy Igrishin's patched version of comint.el."
 ;; manual fresh
 (global-set-key [(control f1)] 'senator-force-refresh)
 
-;; jump
-;;(global-set-key [f12] 'semantic-ia-fast-jump)
-;;(global-set-key [S-f12]
-;;                (lambda ()
-;;                  (interactive)
-;;                  (if (ring-empty-p (oref semantic-mru-bookmark-ring ring))
-;;                      (error "Semantic Bookmark ring is currently empty"))
-;;                  (let* ((ring (oref semantic-mru-bookmark-ring ring))
-;;                         (alist (semantic-mrub-ring-to-assoc-list ring))
-;;                         (first (cdr (car alist))))
-;;                    (if (semantic-equivalent-tag-p (oref first tag)
-;;                                                   (semantic-current-tag))
-;;                        (setq first (cdr (car (cdr alist)))))
-;;                    (semantic-mrub-switch-tags first))))
 ;; hide and show macro #ifdef #endif
 ;(setq hide-ifdef-mode t)
 
@@ -672,11 +638,6 @@ that was stored with ska-point-to-register."
 (global-set-key (kbd "M-e") 'gtags-find-tag)
 (global-set-key (kbd "M-r") 'gtags-pop-stack)
 
-;(add-to-list 'load-path "~/.emacs.d/lisp/dired/")
-;;;;;;; dired
-;;;;;(require 'dired-x)
-;;;;;;; Enable toggling of uninteresting files.
-;;;;;(setq dired-omit-files-p t)
 ;; C-x C-j open the directory of current buffer
 (global-set-key (kbd "C-x C-j")
                 (lambda ()
@@ -713,11 +674,6 @@ that was stored with ska-point-to-register."
        (dired-insert-set-properties (point-min) (point-max)))
   (set-buffer-modified-p nil))
 (add-hook 'dired-after-readin-hook 'sof/dired-sort)
-;; open parent directory -- not work ??
-;(add-hook 'dired-mode-hook (lambda ()
-;  (interactive)
-;  (define-key dired-mode-map (kbd "<ESC-up>") 'dired-up-directory)
-;  (define-key dired-mode-map (kbd "<M-up>")   'dired-up-directory)))
 
 ;; ECB
 (require 'ecb)
