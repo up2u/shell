@@ -59,12 +59,6 @@
 ;;;;;  ;;;;  (while (not (eobp))
 ;;;;;  ;;;;    (forward-line)
 ;;;;;  ;;;;    (speedbar-expand-line)))
-;;;;;  ;;(defun speedbar-expand-all-lines ()
-;;;;;  ;;  (interactive)
-;;;;;  ;;  (goto-char (0))
-;;;;;  ;;  (while (not (0))
-;;;;;  ;;    (forward-line)
-;;;;;  ;;    (speedbar-expand-line)))
 ;;;;;
 ;;;;;  ;;(defcustom speedbar-tag-hierarchy-method
 ;;;;;  ;;'(speedbar-prefix-group-tag-hierarchy
