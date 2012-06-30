@@ -76,6 +76,8 @@
 
 ;; google-c-style
 (require 'google-c-style)
+;; TAB width for makefile
+(setq-default tab-width 4)
 
 ;; tabbar + tabbar-ruler
 (require 'tabbar)
