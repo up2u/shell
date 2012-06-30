@@ -10,6 +10,8 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/common/")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/semantic/")
 (add-to-list 'load-path "~/.emacs.d/lisp/ecb-newcedet/")
+(add-to-list 'load-path "~/.emacs.d/lisp/codestyle/")
+(add-to-list 'load-path "~/.emacs.d/lisp/slime/")
 
 ;;customize defined variable to storing path
 (defconst my-emacs-path "~/.emacs.d/")
@@ -71,6 +73,9 @@
 ;;;;;  ;; start speedbar if we're using a window system
 ;;;;;  (when window-system
 ;;;;;    (sr-speedbar-open))
+
+;; google-c-style
+(require 'google-c-style)
 
 ;; tabbar + tabbar-ruler
 (require 'tabbar)
@@ -435,18 +440,6 @@ Dmitriy Igrishin's patched version of comint.el."
 ;; default 70
 ;(setq-default fill-column 50)
 
-;; set identation
-(setq indent-line-function 'insert-tab)
-(setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44))
-(setq-default indent-tabs-mode nil)
-(setq indent-tabs-mode nil)
-(setq-default tab-width 4)
-(setq tab-width 4)
-
-;; c-set-style
-(setq c-default-style "linux")
-(setq c-basic-offset 4)
-
 ;; Don't want any backup files
 (setq make-backup-files nil)
 ;; Don't want any auto saving
@@ -708,3 +701,11 @@ that was stored with ska-point-to-register."
 (global-set-key [f11] 'hs-hide-all)
 (global-set-key [(shift f11)]  'hs-show-all)
 (global-set-key [(control f11)] 'hs-toggle-hiding)
+
+;; SLIME: The Superior Lisp Interaction Mode for Emacs
+(setq inferior-lisp-program "/usr/bin/sbcl") ; your Lisp system
+(require 'slime)
+(slime-setup '(slime-fancy))
+
+;;start server
+(server-start)

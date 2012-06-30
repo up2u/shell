@@ -50,3 +50,16 @@ other setting ! that not needed !!
 ;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.0.1/semantic/")
 
 ;(setq frame-title-format (list '(buffer-file-name "emacs@%f" (dired-directory dired-directory "emacs@%b"))))
+
+;;;;;   ;; set identation
+;;;;;   (setq indent-line-function 'insert-tab)
+;;;;;   (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44))
+;;;;;   (setq-default indent-tabs-mode nil)
+;;;;;   (setq indent-tabs-mode nil)
+;;;;;   (setq-default tab-width 4)
+;;;;;   (setq tab-width 4)
+;;;;;
+;;;;;   ;; c-set-style
+;;;;;   (setq c-default-style "linux")
+;;;;;   (setq c-basic-offset 4)
+
