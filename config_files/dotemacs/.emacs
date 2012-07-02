@@ -484,6 +484,14 @@ Dmitriy Igrishin's patched version of comint.el."
 (setq ido-everywhere t)
 (setq ido-ignore-extensions t)
 
+;; ibuffer
+(require 'ibuffer)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
+;; browse-kill-ring
+(require 'browse-kill-ring)
+(browse-kill-ring-default-keybindings)
+
 ;;show date and time in mode-line
 ;;(setq display-time-day-and-date t)
 ;;(display-time)
