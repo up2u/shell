@@ -75,6 +75,9 @@
 ;; TAB width for makefile
 (setq-default tab-width 4)
 
+;; for assembly language
+(require 'gas-mode)
+
 ;; tabbar + tabbar-ruler
 (require 'tabbar)
 ;; tabbar-ruler, make tabbar look pretty
