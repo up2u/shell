@@ -730,5 +730,5 @@ that was stored with ska-point-to-register."
 ;            'linum-mode))
 
 ;; undo
-(require 'undo-tree)
-(global-undo-tree-mode)
+;(require 'undo-tree)   ;不好用??
+;(global-undo-tree-mode)
