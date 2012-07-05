@@ -718,3 +718,17 @@ that was stored with ska-point-to-register."
 
 ;;start server
 (server-start)
+
+;; AUCTeX
+;(load "auctex.el" nil t t)
+;(load "preview-latex.el" nil t t)
+;(mapc (lambda (mode)
+;      (add-hook 'LaTeX-mode-hook mode))
+;      (list 'auto-fill-mode
+;            'LaTeX-math-mode
+;            'turn-on-reftex
+;            'linum-mode))
+
+;; undo
+(require 'undo-tree)
+(global-undo-tree-mode)
