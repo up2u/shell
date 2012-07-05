@@ -9,7 +9,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/speedbar")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/common/")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/semantic/")
-(add-to-list 'load-path "~/.emacs.d/lisp/ecb-newcedet/")
+;(add-to-list 'load-path "~/.emacs.d/lisp/ecb-newcedet/")
 (add-to-list 'load-path "~/.emacs.d/lisp/codestyle/")
 (add-to-list 'load-path "~/.emacs.d/lisp/slime/")
 
@@ -566,7 +566,7 @@ Dmitriy Igrishin's patched version of comint.el."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ecb-options-version "2.40")
+; '(ecb-options-version "2.40")
  '(ido-ignore-files (quote ("\\.out" "\\.a" "\\.o" "\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -677,32 +677,32 @@ that was stored with ska-point-to-register."
   (set-buffer-modified-p nil))
 (add-hook 'dired-after-readin-hook 'sof/dired-sort)
 
-;; ECB
-(require 'ecb)
-;(require 'ecb-autoloads)
-(setq ecb-tip-of-the-day nil) ;; not work ??
-(setq ecb-tree-navigation-by-arrow nil) ;; not use arrow key (left right up down)
-
-;; myself layout of ecb and scope
-(ecb-layout-define "my-cscope-layout" left nil
-(ecb-set-sources-buffer)
-(ecb-split-ver 0.30 t)
-(other-window 1)
-(ecb-set-methods-buffer)
-;(ecb-split-ver 0.45 t)
-;(other-window 1)
-;(ecb-set-cscope-buffer)
-)
-;(defecb-window-dedicator ecb-set-cscope-buffer " *ECB cscope-buf*"
-;(switch-to-buffer "*cscope*"))
-
-(setq ecb-layout-name "my-cscope-layout")
-
-;; Disable buckets so that history buffer can display more entries
-(setq ecb-history-make-buckets 'never)
-
-;; start ECB
-(ecb-activate)
+;;;;;   ;; ECB
+;;;;;   (require 'ecb)
+;;;;;   ;(require 'ecb-autoloads)
+;;;;;   (setq ecb-tip-of-the-day nil) ;; not work ??
+;;;;;   (setq ecb-tree-navigation-by-arrow nil) ;; not use arrow key (left right up down)
+;;;;;
+;;;;;   ;; myself layout of ecb and scope
+;;;;;   (ecb-layout-define "my-cscope-layout" left nil
+;;;;;   (ecb-set-sources-buffer)
+;;;;;   (ecb-split-ver 0.30 t)
+;;;;;   (other-window 1)
+;;;;;   (ecb-set-methods-buffer)
+;;;;;   ;(ecb-split-ver 0.45 t)
+;;;;;   ;(other-window 1)
+;;;;;   ;(ecb-set-cscope-buffer)
+;;;;;   )
+;;;;;   ;(defecb-window-dedicator ecb-set-cscope-buffer " *ECB cscope-buf*"
+;;;;;   ;(switch-to-buffer "*cscope*"))
+;;;;;
+;;;;;   (setq ecb-layout-name "my-cscope-layout")
+;;;;;
+;;;;;   ;; Disable buckets so that history buffer can display more entries
+;;;;;   (setq ecb-history-make-buckets 'never)
+;;;;;
+;;;;;   ;; start ECB
+;;;;;   (ecb-activate)
 
 ;; code folding
 (add-hook 'c-mode-hook 'hs-minor-mode)
