@@ -712,9 +712,9 @@ that was stored with ska-point-to-register."
 (global-set-key [(control f11)] 'hs-toggle-hiding)
 
 ;; SLIME: The Superior Lisp Interaction Mode for Emacs
-(setq inferior-lisp-program "/usr/bin/sbcl") ; your Lisp system
-(require 'slime)
-(slime-setup '(slime-fancy))
+;(setq inferior-lisp-program "/usr/bin/sbcl") ; your Lisp system
+;(require 'slime)
+;(slime-setup '(slime-fancy))
 
 ;;start server
 (server-start)
