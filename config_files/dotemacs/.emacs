@@ -11,7 +11,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/semantic/")
 ;(add-to-list 'load-path "~/.emacs.d/lisp/ecb-newcedet/")
 (add-to-list 'load-path "~/.emacs.d/lisp/codestyle/")
-(add-to-list 'load-path "~/.emacs.d/lisp/slime/")
+;(add-to-list 'load-path "~/.emacs.d/lisp/slime/")
 
 ;;customize defined variable to storing path
 (defconst my-emacs-path "~/.emacs.d/")
@@ -494,6 +494,8 @@ Dmitriy Igrishin's patched version of comint.el."
 ;; browse-kill-ring
 (require 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
+;; kill-ring num
+(setq kill-ring-max 200)
 
 ;;show date and time in mode-line
 ;;(setq display-time-day-and-date t)
@@ -504,9 +506,6 @@ Dmitriy Igrishin's patched version of comint.el."
 
 ;; yank to cursor but not mouse point
 (setq mouse-yank-at-point t)
-
-;; kill-ring num
-(setq kill-ring-max 200)
 
 ;; scroll
 ;(setq scroll-margin 2)
