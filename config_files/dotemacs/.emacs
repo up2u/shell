@@ -427,6 +427,8 @@ Dmitriy Igrishin's patched version of comint.el."
 (put 'downcase-region 'disabled nil)
 ;; narrowing
 ;;(put 'narrow-to-region 'disabled nil)
+;; goal column (key: C-x C-n)
+(put 'set-goal-column 'disabled nil)
 
 ;;
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
@@ -731,3 +733,12 @@ that was stored with ska-point-to-register."
 ;; undo
 ;(require 'undo-tree)   ;不好用??
 ;(global-undo-tree-mode)
+
+;; go-to-char http://www.emacswiki.org/emacs/iy-go-to-char.el
+(require 'iy-go-to-char)
+(global-set-key (kbd "C-;") 'iy-go-to-char)
+;; not used key binding
+;(global-set-key (kbd "C-c f") 'iy-go-to-char)
+;(global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
+;(global-set-key (kbd "C-c ;") 'iy-go-to-char-continue)
+;(global-set-key (kbd "C-c ,") 'iy-go-to-char-continue-backward)
