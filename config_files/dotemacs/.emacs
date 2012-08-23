@@ -742,3 +742,6 @@ that was stored with ska-point-to-register."
 ;(global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
 ;(global-set-key (kbd "C-c ;") 'iy-go-to-char-continue)
 ;(global-set-key (kbd "C-c ,") 'iy-go-to-char-continue-backward)
+
+;; transposing text: M-t transpose-words
+(global-set-key  (kbd "C-t") 'transpose-sexps)
