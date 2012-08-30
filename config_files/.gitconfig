@@ -1,20 +1,28 @@
 [user]
-	name = Mao Lijie
-	email = unixlikeos@gmail.com
+	name = name
+	email = name@mail.com
 [color]
-	diff = auto
 	status = auto
+	diff = auto
 	branch = auto
 	ui = auto
+	interactive = auto
 [alias]
-	st = status
+	a   = add
+	au  = add -u
+	d   = diff
+	dw  = diff -w
+	dc  = diff --cached
+	dcw = diff --cached -w
+	co  = checkout
+	st  = status
+	br  = branch
 	cmt = commit
 	rmt = remote
-	co = checkout
-	br = branch
 [core]
 	excludesfile = ~/.gitignore
 	whitespace = cr-at-eol
-#	editor = emacs
+#   editor = emacs
 [commit]
-#	template = ~/.gitcommitmsg.txt
+#   template = ~/.gitcommitmsg.txt
+	pager = less
