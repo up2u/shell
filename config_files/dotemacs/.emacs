@@ -745,3 +745,6 @@ that was stored with ska-point-to-register."
 
 ;; transposing text: M-t transpose-words
 (global-set-key  (kbd "C-t") 'transpose-sexps)
+
+;; load my util
+(require 'myutil)
