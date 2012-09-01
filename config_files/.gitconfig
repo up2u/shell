@@ -1,11 +1,11 @@
 [user]
-	name = name
-	email = name@mail.com
+	name  = Mao Lijie
+	email = maolijie@gmail.com
 [color]
 	status = auto
-	diff = auto
+	diff   = auto
 	branch = auto
-	ui = auto
+	ui     = auto
 	interactive = auto
 [alias]
 	a   = add
@@ -19,6 +19,8 @@
 	br  = branch
 	cmt = commit
 	rmt = remote
+	rb  = rebase
+	ft  = fetch
 [core]
 	excludesfile = ~/.gitignore
 	whitespace = cr-at-eol
