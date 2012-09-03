@@ -16,6 +16,7 @@
 	dcw = diff --cached -w
 	co  = checkout
 	st  = status
+	sh  = stash
 	br  = branch
 	cmt = commit
 	rmt = remote
