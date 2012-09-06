@@ -2,11 +2,14 @@
 
 # input arg 1 2 3 
 echo $@                 # 1 2 3 
-shift
+echo $#
 
+shift
 echo $@                 # 2 3 
-shift
 
+shift
 echo $@                 # 3
 
+shift
+echo $#
 exit $?
