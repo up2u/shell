@@ -45,4 +45,7 @@ echo -e "1\n2\n3" > 1
 # diff 2o 1 > /tmp/1
 # patch -p0 2 /tmp/
 
+## NOTE:
+# if the 1 change the same line with 2, patching will fail
+
 exit $?
