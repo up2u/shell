@@ -464,7 +464,7 @@
 
 ;; ibuffer
 (require 'ibuffer)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key [(control f2)] 'ibuffer)
 
 ;; browse-kill-ring
 (require 'browse-kill-ring)
