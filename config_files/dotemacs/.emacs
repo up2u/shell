@@ -75,6 +75,10 @@
 ;; TAB width for makefile
 (setq-default tab-width 4)
 
+;; ctypes
+(require 'ctypes)
+(ctypes-auto-parse-mode 1)
+
 ;; for assembly language
 (require 'gas-mode)
 
