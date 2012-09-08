@@ -257,8 +257,10 @@
 ;; scroll
 ;(setq scroll-margin 2)
 
-;; cursor to be vertical bar, not a block
-(setq-default cursor-type 'bar)
+;; Emacs才是世界上最强大的IDE － 智能的改变光标形状
+;; http://emacser.com/cursor-change.htm
+(require 'cursor-change)
+(cursor-change-mode 1)
 
 ;; default: text mode + auto-fill-mode
 (setq default-major-mode 'text-mode)
