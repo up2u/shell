@@ -488,9 +488,9 @@
 ;; cursor to be vertical bar, not a block
 (setq-default cursor-type 'bar)
 
-;; text mode
+;; default: text mode + auto-fill-mode
 (setq default-major-mode 'text-mode)
-;(add-hook 'text-mode-hook 'turn-on-auto-fill) ;; comment it because it had previous !!, i don't know how its effect !
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
 
 ;; add line at end of file
 (setq require-final-newline t)
