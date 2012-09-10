@@ -289,6 +289,8 @@
 (global-font-lock-mode 't)
 ;; highlight current line
 (global-hl-line-mode 1)
+;; 高亮过于长的行, 暂不要打开这个功能
+;(require 'highlight-beyond-fill-column)
 
 ;; parenthese match
 (show-paren-mode t)
@@ -304,7 +306,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
 ; '(ecb-options-version "2.40")
- '(ido-ignore-files (quote ("\\.out" "\\.a" "\\.o" "\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./"))))
+ '(ido-ignore-files (quote ("\\.out" "\\.a" "\\.o" "\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./")))
+ '(highlight-beyond-fill-column-in-modes (quote ("c-mode" "c++-mode")))
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
