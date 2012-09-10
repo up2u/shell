@@ -186,7 +186,7 @@
 ;;(setq user-mail-address "name@gmail.com")
 
 ;; default 70
-(setq-default fill-column 80)
+;(setq-default fill-column 80)
 
 ;; Don't want any backup files
 (setq make-backup-files nil)
@@ -266,7 +266,7 @@
 (setq default-major-mode 'text-mode)
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 ;; turn on auto-fill-mode only for code comments
-(setq comment-auto-fill-only-comments t)
+;(setq comment-auto-fill-only-comments t)
 
 ;; add line at end of file
 (setq require-final-newline t)
