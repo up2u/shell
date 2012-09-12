@@ -21,6 +21,15 @@
 (setq default-directory "/work/")
 ;; frame title
 (setq frame-title-format '("%m @ "(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+;; want two windows at startup
+(split-window-horizontally)
+
+;; http://ted.is-programmer.com/tag/emacs
+;; Moving cursor down at bottom scrolls only a single line, not half page ??
+(setq scroll-step 1)
+(setq scroll-conservatively 5)
+;; will delete "hungrily" in C mode! Use it to see what it does -- very useful.
+(setq c-hungry-delete-key t)
 
 ;; binding for previous/next-buffer
 (global-set-key [f2]  'previous-buffer)
