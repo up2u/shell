@@ -26,8 +26,11 @@
 
 ;; http://ted.is-programmer.com/tag/emacs
 ;; Moving cursor down at bottom scrolls only a single line, not half page ??
-(setq scroll-step 1)
-(setq scroll-conservatively 5)
+;; + http://www.emacswiki.org/emacs/SmoothScrolling
+;(setq scroll-step 1)
+;(setq scroll-conservatively 5)
+;; scroll
+;(setq scroll-margin 2)
 ;; will delete "hungrily" in C mode! Use it to see what it does -- very useful.
 (setq c-hungry-delete-key t)
 
@@ -262,9 +265,6 @@
 
 ;; yank to cursor but not mouse point
 (setq mouse-yank-at-point t)
-
-;; scroll
-;(setq scroll-margin 2)
 
 ;; Emacs才是世界上最强大的IDE － 智能的改变光标形状
 ;; http://emacser.com/cursor-change.htm
