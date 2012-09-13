@@ -24,6 +24,9 @@
 ;; want two windows at startup
 (split-window-horizontally)
 
+;; key swap
+(require 'key-swap)
+
 ;; http://ted.is-programmer.com/tag/emacs
 ;; Moving cursor down at bottom scrolls only a single line, not half page ??
 ;; + http://www.emacswiki.org/emacs/SmoothScrolling
