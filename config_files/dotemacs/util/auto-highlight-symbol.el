@@ -387,13 +387,13 @@ Affects only overlay(hidden text) has a property `isearch-open-invisible'."
 ;; (@* "Face" )
 ;;
 (defface ahs-face
-  '((t (:foreground "GhostWhite" :background "LightYellow4")))
+  '((t (:foreground "Black" :background "GreenYellow")))
   "Highlight the symbol using this face."
   :group 'auto-highlight-symbol)
 (defvar ahs-face 'ahs-face)
 
 (defface ahs-definition-face
-  '((t (:foreground "moccasin" :background "CadetBlue" :underline t)))
+  '((t (:foreground "Black" :background "Yellow" :underline t)))
   "Highlight the symbol definition using this face."
   :group 'auto-highlight-symbol)
 (defvar ahs-definition-face 'ahs-definition-face)
