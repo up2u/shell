@@ -10,18 +10,18 @@
 [alias]
 	a   = add
 	au  = add -u
-	d   = diff
-	dw  = diff -w
-	dc  = diff --cached
-	dcw = diff --cached -w
-	co  = checkout
-	st  = status
-	sh  = stash
 	br  = branch
 	cmt = commit
-	rmt = remote
-	rb  = rebase
+	co  = checkout
+	d   = diff
+	dc  = diff --cached
+	dcw = diff --cached -w
+	dw  = diff -w
 	ft  = fetch
+	rb  = rebase
+	rmt = remote
+	sh  = stash
+	st  = status
 [core]
 	excludesfile = ~/.gitignore
 	whitespace = cr-at-eol
