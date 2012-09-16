@@ -127,4 +127,47 @@ that was stored with ska-point-to-register."
         (jump-to-register 8)
         (set-register 8 tmp)))
 
+;; http://emacser.com/org-mode-tricks.htm
+;; iexp
+(define-skeleton 1exp
+  "Input #+BEGIN_EXAMPLE #+END_EXAMPLE in org-mode"
+""
+"#+BEGIN_EXAMPLE\n"
+ _ "\n"
+"#+END_EXAMPLE"
+)
+(define-abbrev org-mode-abbrev-table "iexp" "" '1exp)
+
+;; isrc
+(define-skeleton 1src
+  "Input #+begin_src #+end_src in org-mode"
+""
+"#+begin_src lisp \n"
+ _ "\n"
+"#+end_src"
+)
+(define-abbrev org-mode-abbrev-table "isrc" "" '1src)
+
+;; iprop
+(define-skeleton 1prop
+  "Input :PROPERTIES: :END: in org-mode"
+""
+>":PROPERTIES:\n"
+> _ "\n"
+>":END:"
+)
+(define-abbrev org-mode-abbrev-table "iprop" "" '1prop)
+
+;; insert-emacser-code
+(define-skeleton insert-emacser-code
+  ""
+  ""
+  "#+BEGIN_HTML\n"
+"<pre lang=\"lisp\" line=\"1\">\n"
+_"\n"
+"</pre>\n"
+"#+END_HTML\n"
+)
+(define-abbrev org-mode-abbrev-table "ihtml"  "" 'insert-emacser-code)
+
 (provide 'myutil)
