@@ -18,6 +18,8 @@
 	dcw = diff --cached -w
 	dw  = diff -w
 	ft  = fetch
+	pl  = pull
+	ps  = push
 	rb  = rebase
 	rmt = remote
 	sh  = stash
