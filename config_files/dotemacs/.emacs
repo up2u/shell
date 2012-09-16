@@ -32,6 +32,28 @@
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
+;; http://www.codewaysky.com/archives/412.html
+(require 'org-publish)
+(setq org-publish-project-alist
+      '(
+        ("org-notes"
+         :base-directory "~/org"
+         :base-extension "org"
+         :publishing-directory "~/org/exports"
+         :recursive t
+         :publishing-function org-publish-org-to-html
+         :headline-levels 4
+         :auto-preamble t
+         )
+        ("org-static"
+         :base-directory "~/org"
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|doc\\|xls\\|ppt\\|rar\\|tar.gz\\|tar\\|gz\\|zip\\|cpp\\|c\\|el"
+         :publishing-directory "~/org/exports"
+         :recursive t
+         :publishing-function org-publish-attachment
+         )
+        ("org" :components ("org-notes" "org-static"))
+        ))
 
 ;; key swap
 (require 'key-swap)
