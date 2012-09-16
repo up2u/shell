@@ -119,36 +119,6 @@
 (global-set-key (kbd "<C-up>")    'tabbar-backward-group)
 (global-set-key (kbd "<C-down>")  'tabbar-forward-group)
 
-;;from http://wwliu.is-programmer.com/posts/14728.html
-;;;; 设置tabbar外观
-;; 设置默认主题: 字体, 背景和前景颜色，大小
-(set-face-attribute 'tabbar-default nil
-                    :family "DejaVu Sans Mono"
-                    :background "gray80"
-                    :foreground "gray30"
-                    :height 0.8
-                    )
-;; 设置左边按钮外观：外框框边大小和颜色
-(set-face-attribute 'tabbar-button nil
-                    :inherit 'tabbar-default
-                    :box '(:line-width 1 :color "gray30")
-                    )
-;; 设置当前tab外观：颜色，字体，外框大小和颜色
-(set-face-attribute 'tabbar-selected nil
-                    :inherit 'tabbar-default
-                    :foreground "Black"
-                    :background "Yellow"
-                    :box '(:line-width 1 :color "DarkGoldenrod")
-                    ;; :overline "black"
-                    ;; :underline "black"
-                    :weight 'bold
-                    )
-;; 设置非当前tab外观：外框大小和颜色
-(set-face-attribute 'tabbar-unselected nil
-                    :inherit 'tabbar-default
-                    :box '(:line-width 1 :color "gray70")
-                    )
-
 ;; rectangle
 (require 'rect-mark)
 (global-set-key (kbd "C-@") 'rm-set-mark)
@@ -320,24 +290,6 @@
 ;; copy & paste with outside
 (setq x-select-enable-clipboard t)
 
-;; customize setting
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
-; '(ecb-options-version "2.40")
- '(ido-ignore-files (quote ("\\.out" "\\.a" "\\.o" "\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./")))
- '(highlight-beyond-fill-column-in-modes (quote ("c-mode" "c++-mode")))
- )
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- ;'(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 98 :width normal))))
- )
-
 ;; Warning:cedet-called-interactively-p called with 0 arguments, but requires 1
 (setq byte-compile-warnings nil)
 (require 'cedet)
@@ -362,29 +314,6 @@
 
 ;; hide and show macro #ifdef #endif
 ;(setq hide-ifdef-mode t)
-
-;; jump to and jump back from 王垠
-;(global-set-key [(control ?\.)] 'ska-point-to-register)
-;(global-set-key [(control ?\,)] 'ska-jump-to-register)
-(global-set-key [(M ?\.)] 'ska-point-to-register)
-(global-set-key [(M ?\,)] 'ska-jump-to-register)
-
-(defun ska-point-to-register()
-  "Store cursorposition _fast_ in a register.
-Use ska-jump-to-register to jump back to the stored
-position."
-  (interactive)
-  (setq zmacs-region-stays t)
-  (point-to-register 8))
-
-(defun ska-jump-to-register()
-  "Switches between current cursorposition and position
-that was stored with ska-point-to-register."
-  (interactive)
-  (setq zmacs-region-stays t)
-  (let ((tmp (point-marker)))
-        (jump-to-register 8)
-        (set-register 8 tmp)))
 
 ;; highlight-symbol for highlight variable
 (require 'highlight-symbol)
@@ -481,3 +410,6 @@ that was stored with ska-point-to-register."
 
 ;; load my util
 (require 'myutil)
+
+;; load customize setting
+(require 'customize-setting)
