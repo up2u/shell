@@ -139,7 +139,7 @@
 (setq uniquify-buffer-name-style 'post-forward
       uniquify-separator ":")
 
-;; cscope - i don't use etags any more
+;; cscope
 (require 'xcscope)
 (setq cscope-do-not-update-database t)
 ;; cscope key binding
@@ -212,7 +212,7 @@
 ;; where my elisp stuff is
 ;;(setq load-path (cons "/path" load-path))
 
-;; none of these plese
+;; none of these
 (scroll-bar-mode 0)
 (tool-bar-mode 0)
 (menu-bar-mode 0)
@@ -309,7 +309,9 @@
 (global-set-key [(control f1)] 'senator-force-refresh)
 
 ;; hide and show macro #ifdef #endif
-;(setq hide-ifdef-mode t)
+(hide-ifdef-mode t)
+(global-set-key [f9] 'hide-ifdef-block)
+(global-set-key [(control f9)] 'show-ifdef-block)
 
 ;; highlight-symbol for highlight variable
 (require 'highlight-symbol)
