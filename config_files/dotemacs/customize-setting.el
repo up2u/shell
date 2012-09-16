@@ -1,3 +1,8 @@
+
+;; user name and email
+;;(setq user-full-name "name")
+;;(setq user-mail-address "name@gmail.com")
+
 ;; customize setting
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

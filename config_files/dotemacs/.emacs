@@ -175,10 +175,6 @@
 ;; vertical motion starting at end of line keeps to ends of lines
 (setq track-eol t)
 
-;; user name and email
-;;(setq user-full-name "name")
-;;(setq user-mail-address "name@gmail.com")
-
 ;; default 70
 ;(setq-default fill-column 80)
 
