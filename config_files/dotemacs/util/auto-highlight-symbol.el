@@ -520,8 +520,8 @@ This variable can be set in three different types.
     nil
   (setq auto-highlight-symbol-mode-map
         (let ((map (make-sparse-keymap)))
-          (define-key map (kbd "M-<left>"    ) 'ahs-backward            )
-          (define-key map (kbd "M-<right>"   ) 'ahs-forward             )
+          (define-key map (kbd "C-<left>"    ) 'ahs-backward            )
+          (define-key map (kbd "C-<right>"   ) 'ahs-forward             )
           (define-key map (kbd "M-S-<left>"  ) 'ahs-backward-definition )
           (define-key map (kbd "M-S-<right>" ) 'ahs-forward-definition  )
           (define-key map (kbd "M--"         ) 'ahs-back-to-start       )

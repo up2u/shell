@@ -136,10 +136,10 @@
 (define-prefix-command 'lwindow-map)
 ;(global-set-key (kbd "<M-left>")  'tabbar-backward) ;; will cross group ?
 ;(global-set-key (kbd "<M-right>") 'tabbar-forward)
-(global-set-key (kbd "<C-left>")  'tabbar-backward-tab) ;;will not cross group ?
-(global-set-key (kbd "<C-right>") 'tabbar-forward-tab)
-(global-set-key (kbd "<C-up>")    'tabbar-backward-group)
-(global-set-key (kbd "<C-down>")  'tabbar-forward-group)
+(global-set-key (kbd "<M-left>")  'tabbar-backward-tab) ;;will not cross group ?
+(global-set-key (kbd "<M-right>") 'tabbar-forward-tab)
+(global-set-key (kbd "<M-up>")    'tabbar-backward-group)
+(global-set-key (kbd "<M-down>")  'tabbar-forward-group)
 
 ;; rectangle
 (require 'rect-mark)
