@@ -333,7 +333,7 @@
 ;; hide and show macro #ifdef #endif
 (hide-ifdef-mode t)
 (global-set-key [f9] 'hide-ifdef-block)
-(global-set-key [(control f9)] 'show-ifdef-block)
+(global-set-key [(shift f9)] 'show-ifdef-block)
 
 ;; highlight-symbol for highlight variable
 (require 'highlight-symbol)
