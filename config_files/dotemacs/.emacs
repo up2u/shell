@@ -44,6 +44,7 @@
          :publishing-function org-publish-org-to-html
          :headline-levels 4
          :auto-preamble t
+         :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/stylesheet.css\" />"
          )
         ("org-static"
          :base-directory "~/org"
