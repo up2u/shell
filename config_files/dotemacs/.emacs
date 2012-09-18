@@ -332,9 +332,14 @@
 (global-set-key [(control f1)] 'senator-force-refresh)
 
 ;; hide and show macro #ifdef #endif
-(hide-ifdef-mode t)
-(global-set-key [f9] 'hide-ifdef-block)
-(global-set-key [(shift f9)] 'show-ifdef-block)
+(add-hook 'c-mode-hook
+          '(lambda ()
+             (hide-ifdef-mode t)))
+(add-hook 'c++-mode-hook
+          '(lambda ()
+             (hide-ifdef-mode t)))
+(global-set-key [f10] 'hide-ifdef-block)
+(global-set-key [(shift f10)] 'show-ifdef-block)
 
 ;; highlight-symbol for highlight variable
 (require 'highlight-symbol)

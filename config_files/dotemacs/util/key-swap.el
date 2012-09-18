@@ -4,11 +4,11 @@
 ;; The below function "swaps" the numeric keys with the respective characters
 ;; (e.g., '*' with '8' and '(' with '9'). Why? It appears to me that the upper
 ;; row of characters is used more often in C/C++. So we need fewer key-strokes
-;; (the 'Shift' is avoided) with the swappings in place. 'F10' and 'Shift-F10'
+;; (the 'Shift' is avoided) with the swappings in place. 'F9' and 'Shift-F9'
 ;; allow u to toggle between these key-swaps.
 
-(global-set-key [f10]   '(lambda () (interactive) (my-key-swap    my-key-pairs)))
-(global-set-key [S-f10] '(lambda () (interactive) (my-key-restore my-key-pairs)))
+(global-set-key [f9]   '(lambda () (interactive) (my-key-swap    my-key-pairs)))
+(global-set-key [S-f9] '(lambda () (interactive) (my-key-restore my-key-pairs)))
 
 (setq my-key-pairs
       '((?! ?1) (?@ ?2) (?# ?3) (?$ ?4) (?% ?5)
@@ -18,7 +18,7 @@
 
 (defun my-key-swap (key-pairs)
   (if (eq key-pairs nil)
-      (message "Keyboard zapped!! Shift-F10 to restore!")
+      (message "Keyboard zapped!! Shift-F9 to restore!")
 	(progn
 	  (keyboard-translate (caar key-pairs)  (cadar key-pairs))
 	  (keyboard-translate (cadar key-pairs) (caar key-pairs))
@@ -28,7 +28,7 @@
 
 (defun my-key-restore (key-pairs)
   (if (eq key-pairs nil)
-      (message "Keyboard restored!! F10 to Zap!")
+      (message "Keyboard restored!! F9 to Zap!")
 	(progn
 	  (keyboard-translate (caar key-pairs)  (caar key-pairs))
 	  (keyboard-translate (cadar key-pairs) (cadar key-pairs))
