@@ -93,7 +93,8 @@ SCHEDULED: %t
  '(org-use-tag-inheritance nil)
  '(org-x-backends (quote (ox-org ox-redmine)))
  '(org-x-redmine-title-prefix-function (quote org-x-redmine-title-prefix))
- '(org-x-redmine-title-prefix-match-function (quote org-x-redmine-title-prefix-match)))
+ '(org-x-redmine-title-prefix-match-function (quote org-x-redmine-title-prefix-match))
+) ; custom-set-variables
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -108,14 +109,8 @@ SCHEDULED: %t
  '(org-habit-ready-face ((((background light)) (:background "#4df946"))))
  '(org-habit-ready-future-face ((((background light)) (:background "#acfca9"))))
  '(org-scheduled ((((class color) (min-colors 88) (background light)) nil)))
- '(org-upcoming-deadline ((((class color) (min-colors 88) (background light)) (:foreground "Brown")))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- ;'(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 98 :width normal))))
- )
+ '(org-upcoming-deadline ((((class color) (min-colors 88) (background light)) (:foreground "Brown"))))
+) ; custom-set-faces
 
 ;;from http://wwliu.is-programmer.com/posts/14728.html
 ;;;; 设置tabbar外观
