@@ -28,6 +28,7 @@
 
 ;; org version org-7.9.1
 (require 'org-install)
+(add-hook 'text-mode-hook 'org-mode)
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-ca" 'org-agenda)
