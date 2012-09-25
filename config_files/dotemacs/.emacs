@@ -348,7 +348,7 @@
 (global-set-key [(shift f3)] 'highlight-symbol-prev) ;; go prev
 ;(global-set-key [(meta f3)] 'highlight-symbol-prev) ;; comment for don't use meta key
 ;; auto-highlight-symbol
-(require 'auto-highlight-symbol-config)
+;(require 'auto-highlight-symbol-config)
 
 ;;
 (autoload 'gtags-mode "gtags" "" t)
