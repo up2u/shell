@@ -119,8 +119,15 @@
 (require 'google-c-style)
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)
-;; TAB width for makefile
+;; TAB width
 (setq-default tab-width 4)
+;; shell,perl... mode: always space but not TAB
+(add-hook 'sh-mode-hook
+		  '(lambda ()
+			 (setq indent-tabs-mode nil)))
+(add-hook 'perl-mode-hook
+		  '(lambda ()
+			 (setq indent-tabs-mode nil)))
 
 ;; ctypes
 (require 'ctypes)
