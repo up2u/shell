@@ -1,7 +1,7 @@
 
 ;; user name and email
-;;(setq user-full-name "name")
-;;(setq user-mail-address "name@gmail.com")
+(setq user-full-name "毛礼杰")
+(setq user-mail-address "maolijie@gmail.com")
 
 ;; customize setting
 (custom-set-variables
