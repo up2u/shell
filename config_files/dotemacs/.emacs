@@ -11,8 +11,8 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/semantic/")
 ;(add-to-list 'load-path "~/.emacs.d/lisp/ecb-newcedet/")
 (add-to-list 'load-path "~/.emacs.d/lisp/codestyle/")
-(add-to-list 'load-path "~/.emacs.d/lisp/org-7.9.1/lisp")
-(add-to-list 'load-path "~/.emacs.d/lisp/org-7.9.1/contrib/lisp")
+(add-to-list 'load-path "~/.emacs.d/lisp/org/lisp")
+(add-to-list 'load-path "~/.emacs.d/lisp/org/contrib/lisp")
 ;(add-to-list 'load-path "~/.emacs.d/lisp/slime/")
 
 ;;customize defined variable to storing path
