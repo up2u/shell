@@ -27,7 +27,7 @@
 ;; want two windows at startup
 (split-window-horizontally)
 
-;; org version org-7.9.1
+;; org version org
 (require 'org-install)
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cc" 'org-capture)
