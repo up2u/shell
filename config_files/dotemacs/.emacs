@@ -11,6 +11,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/semantic/")
 ;(add-to-list 'load-path "~/.emacs.d/lisp/ecb-newcedet/")
 (add-to-list 'load-path "~/.emacs.d/lisp/codestyle/")
+(add-to-list 'load-path "~/.emacs.d/lisp/yasnippet")
 (add-to-list 'load-path "~/.emacs.d/lisp/org/lisp")
 (add-to-list 'load-path "~/.emacs.d/lisp/org/contrib/lisp")
 ;(add-to-list 'load-path "~/.emacs.d/lisp/slime/")
@@ -184,9 +185,32 @@
 (require 'which-func)
 (which-func-mode 1)
 
+;; yasnippet
+(require 'yasnippet)
+(yas-global-mode 1)
+
 ;; auto-complete-settings
 (require 'auto-complete-settings)
 (ac-config-default)
+;; a issue like below:
+;; http://stackoverflow.com/questions/15774807/emacs-24-autocomplete-yasnippet
+;; just temporary workaround
+(setq ac-source-yasnippet nil)
+
+;(defface ac-yasnippet-candidate-face
+;  '((t (:background "sandybrown" :foreground "black")))
+;  "Face for yasnippet candidate.")
+;
+;(defface ac-yasnippet-selection-face
+;  '((t (:background "coral3" :foreground "white")))
+;  "Face for the yasnippet selected candidate.")
+;
+;(defvar ac-source-yasnippet
+;  '((candidates . ac-yasnippet-candidate)
+;    (action . yas/expand)
+;    (candidate-face . ac-yasnippet-candidate-face)
+;    (selection-face . ac-yasnippet-selection-face))
+;  "Source for Yasnippet.")
 
 ;; minibuf
 (setq enable-recursive-minibuffers t)
