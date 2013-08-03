@@ -113,34 +113,35 @@
  '(org-upcoming-deadline ((((class color) (min-colors 88) (background light)) (:foreground "Brown"))))
 ) ; custom-set-faces
 
-;;from http://wwliu.is-programmer.com/posts/14728.html
-;;;; 设置tabbar外观
-;; 设置默认主题: 字体, 背景和前景颜色，大小
-(set-face-attribute 'tabbar-default nil
-                    :family "DejaVu Sans Mono"
-                    :background "gray80"
-                    :foreground "gray30"
-                    :height 0.8
-                    )
-;; 设置左边按钮外观：外框框边大小和颜色
-(set-face-attribute 'tabbar-button nil
-                    :inherit 'tabbar-default
-                    :box '(:line-width 1 :color "gray30")
-                    )
-;; 设置当前tab外观：颜色，字体，外框大小和颜色
-(set-face-attribute 'tabbar-selected nil
-                    :inherit 'tabbar-default
-                    :foreground "Black"
-                    :background "Yellow"
-                    :box '(:line-width 1 :color "DarkGoldenrod")
-                    ;; :overline "black"
-                    ;; :underline "black"
-                    :weight 'bold
-                    )
-;; 设置非当前tab外观：外框大小和颜色
-(set-face-attribute 'tabbar-unselected nil
-                    :inherit 'tabbar-default
-                    :box '(:line-width 1 :color "gray70")
-                    )
+;; seems that after update tabbar & tabbar-ruler them don't work, so just comment them
+;;comment: ;;from http://wwliu.is-programmer.com/posts/14728.html
+;;comment: ;;;; 设置tabbar外观
+;;comment: ;; 设置默认主题: 字体, 背景和前景颜色，大小
+;;comment: (set-face-attribute 'tabbar-default nil
+;;comment:                     :family "DejaVu Sans Mono"
+;;comment:                     :background "gray80"
+;;comment:                     :foreground "gray30"
+;;comment:                     :height 0.8
+;;comment:                     )
+;;comment: ;; 设置左边按钮外观：外框框边大小和颜色
+;;comment: (set-face-attribute 'tabbar-button nil
+;;comment:                     :inherit 'tabbar-default
+;;comment:                     :box '(:line-width 1 :color "gray30")
+;;comment:                     )
+;;comment: ;; 设置当前tab外观：颜色，字体，外框大小和颜色
+;;comment: (set-face-attribute 'tabbar-selected nil
+;;comment:                     :inherit 'tabbar-default
+;;comment:                     :foreground "Black"
+;;comment:                     :background "Yellow"
+;;comment:                     :box '(:line-width 1 :color "DarkGoldenrod")
+;;comment:                     ;; :overline "black"
+;;comment:                     ;; :underline "black"
+;;comment:                     :weight 'bold
+;;comment:                     )
+;;comment: ;; 设置非当前tab外观：外框大小和颜色
+;;comment: (set-face-attribute 'tabbar-unselected nil
+;;comment:                     :inherit 'tabbar-default
+;;comment:                     :box '(:line-width 1 :color "gray70")
+;;comment:                     )
 
 (provide 'customize-setting)
