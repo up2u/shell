@@ -137,6 +137,9 @@
 ;; for assembly language
 (require 'gas-mode)
 
+;; for color-name-to-rgb used in tabbar-ruler
+(require 'color)
+
 ;; tabbar + tabbar-ruler
 (require 'tabbar)
 ;; tabbar-ruler, make tabbar look pretty
