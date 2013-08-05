@@ -34,7 +34,7 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 ;; http://www.codewaysky.com/archives/412.html
-(require 'org-publish)
+(require 'ox-publish)
 (setq org-publish-project-alist
       '(
         ("org-notes"
