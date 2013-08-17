@@ -12,3 +12,10 @@
 *.obj
 *.dump
 *.bak
+GPATH
+GRTAGS
+GTAGS
+cscope.files
+cscope.out
+cscope.out.in
+cscope.out.po
