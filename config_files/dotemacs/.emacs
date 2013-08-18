@@ -283,6 +283,16 @@
 (setq ido-everywhere t)
 (setq ido-ignore-extensions t)
 
+; To auto-start Smex every time you open Emacs add these lines to your .emacs file:
+(require 'smex) ; Not needed if you use package.el
+(smex-initialize) ; Can be omitted. This might cause a (minimal) delay
+                  ; when Smex is auto-initialized on its first run.
+; Bind some keys
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
 ;; ibuffer
 (require 'ibuffer)
 (global-set-key [(control f2)] 'ibuffer)
