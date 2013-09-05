@@ -31,10 +31,10 @@
 
 ;; org version org
 (require 'org-install)
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
+;;;     (global-set-key "\C-cl" 'org-store-link)
+;;;     (global-set-key "\C-cc" 'org-capture)
+;;;     (global-set-key "\C-ca" 'org-agenda)
+;;;     (global-set-key "\C-cb" 'org-iswitchb)
 ;; http://www.codewaysky.com/archives/412.html
 (require 'ox-publish)
 (setq org-publish-project-alist
@@ -58,6 +58,11 @@
          )
         ("org" :components ("org-notes" "org-static"))
         ))
+
+; dired+
+; http://www.emacswiki.org/emacs/dired%2b.el
+; bugs when use f1 (binding to next-buffer, so comment it)
+; (require 'dired+)
 
 ;; key swap
 (require 'key-swap)
@@ -189,6 +194,9 @@
 ;; show which function of current cursor
 (require 'which-func)
 (which-func-mode 1)
+
+;; for letrec required in yasnippet
+(require 'letrec)
 
 ;; yasnippet
 (require 'yasnippet)
