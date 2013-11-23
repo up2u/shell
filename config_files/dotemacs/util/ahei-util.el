@@ -216,4 +216,4 @@ and COMMAND-off when IS-ON is nil."
 KEY is a string or vector representing a sequence of keystrokes."
   (define-key keymap key nil))
 
-(provide 'util)
+(provide 'ahei-util)

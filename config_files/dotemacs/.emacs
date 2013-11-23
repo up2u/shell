@@ -1,4 +1,6 @@
 ;; add load path
+;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/common/")
+;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/semantic/")
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (add-to-list 'load-path "~/.emacs.d/lisp/util")
 (add-to-list 'load-path "~/.emacs.d/lisp/cscope")
@@ -9,9 +11,10 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/rect-mark")
 (add-to-list 'load-path "~/.emacs.d/lisp/tabbar")
 (add-to-list 'load-path "~/.emacs.d/lisp/speedbar")
-(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/common/")
-(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/semantic/")
-;(add-to-list 'load-path "~/.emacs.d/lisp/ecb-newcedet/")
+(add-to-list 'load-path "~/.emacs.d/lisp/cedet-git/lisp/")
+(add-to-list 'load-path "~/.emacs.d/lisp/cedet-git/lisp/cedet/")
+(add-to-list 'load-path "~/.emacs.d/lisp/cedet-git/lisp/eieio/")
+(add-to-list 'load-path "~/.emacs.d/lisp/cedet-git/contrib/")
 (add-to-list 'load-path "~/.emacs.d/lisp/codestyle/")
 (add-to-list 'load-path "~/.emacs.d/lisp/yasnippet")
 (add-to-list 'load-path "~/.emacs.d/lisp/org/lisp")
@@ -29,6 +32,8 @@
 ;; want two windows at startup
 (split-window-horizontally)
 
+;; 增加更丰富的高亮
+(require 'generic-x)
 
 ;; for fix function gensym is void
 (require 'cl)
@@ -66,7 +71,7 @@
 ; dired+
 ; http://www.emacswiki.org/emacs/dired%2b.el
 ; bugs when use f1 (binding to next-buffer, so comment it)
-; (require 'dired+)
+;(require 'dired+)
 
 ;; key swap
 (require 'key-swap)
@@ -146,7 +151,8 @@
 (ctypes-auto-parse-mode 1)
 
 ;; for assembly language
-(require 'gas-mode)
+;; comment: it use Assembler mode default, more beautiful than gas-mode
+;(require 'gas-mode)
 
 ;; for color-name-to-rgb used in tabbar-ruler
 (require 'color)
@@ -247,7 +253,7 @@
 (setq track-eol t)
 
 ;; default 70
-;(setq-default fill-column 80)
+(setq-default fill-column 80)
 
 ;; Don't want any backup files
 (setq make-backup-files nil)
@@ -303,7 +309,7 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 ;; This is your old M-x.
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+;(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command) ;;mlj now in emacs24.3 can expand to windows also
 
 ;; ibuffer
 (require 'ibuffer)
@@ -370,16 +376,25 @@
 ;; Warning:cedet-called-interactively-p called with 0 arguments, but requires 1
 (setq byte-compile-warnings nil)
 (require 'cedet)
+(require 'cedet-m3)
+(require 'cedet-contrib)
 ;(require 'semantic)
-;(semantic-load-enable-minimum-features)
+;(require 'eieio)
+;(require 'ede)
+;(require 'srecode)
+
+(require 'semantic/canned-configs)
+(semantic-load-enable-minimum-features)
 (semantic-load-enable-code-helpers)
 ;(semantic-load-enable-guady-code-helpers)
 ;(semantic-load-enable-excessive-code-helpers)
 (semantic-load-enable-semantic-debugging-helpers)
+;(semantic-show-unmatched-syntax-mode nil) ;;烦人的下底红线
 ;(global-srecode-minor-mode 1)  ;; need to learn more.
-(require 'semantic-tag-folding nil 'noerror)
+;(require 'semantic-tag-folding nil 'noerror)  ;; mlj
+(require 'semantic-tag-folding)  ;; mlj now just require and no error
 (global-semantic-tag-folding-mode 1)
-(global-set-key (kbd "C-?") 'global-semantic-tag-folding-mode)
+(global-set-key (kbd "C-?") 'global-semantic-tag-folding-mode) ;; 用来表示c一个函数块的左边的倒三角的？
 ;; from http://emacser.com/cedet.htm
 ;;;;;(define-key semantic-tag-folding-mode-map (kbd "C-c , -") 'semantic-tag-folding-fold-block)
 ;;;;;(define-key semantic-tag-folding-mode-map (kbd "C-c , +") 'semantic-tag-folding-show-block)
@@ -387,7 +402,9 @@
 ;;;;;(define-key semantic-tag-folding-mode-map (kbd "C-+") 'semantic-tag-folding-show-all)
 
 ;; manual fresh
-(global-set-key [(control f1)] 'senator-force-refresh)
+;; when update cedet 2.0, no this function, and not know alternative function
+;; so temporary comment it
+;(global-set-key [(control f1)] 'senator-force-refresh)
 
 ;; hide and show macro #ifdef #endif
 (add-hook 'c-mode-hook
@@ -511,3 +528,7 @@
 
 ;; load customize setting
 (require 'customize-setting)
+
+;; wcy desktop
+(require 'wcy-desktop)
+(wcy-desktop-init)
