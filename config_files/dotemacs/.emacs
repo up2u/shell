@@ -2,24 +2,24 @@
 ;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/common/")
 ;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/semantic/")
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-(add-to-list 'load-path "~/.emacs.d/lisp/util")
-(add-to-list 'load-path "~/.emacs.d/lisp/cscope")
-(add-to-list 'load-path "~/.emacs.d/lisp/auto-complete")
-(add-to-list 'load-path "~/.emacs.d/lisp/auto-complete/lib/fuzzy")
-(add-to-list 'load-path "~/.emacs.d/lisp/auto-complete/lib/popup")
+(add-to-list 'load-path "~/.emacs.d/lisp/util/")
+(add-to-list 'load-path "~/.emacs.d/lisp/cscope/")
+(add-to-list 'load-path "~/.emacs.d/lisp/auto-complete/")
+(add-to-list 'load-path "~/.emacs.d/lisp/auto-complete/lib/fuzzy/")
+(add-to-list 'load-path "~/.emacs.d/lisp/auto-complete/lib/popup/")
 (add-to-list 'load-path "~/.emacs.d/lisp/auto-complete-clang/")
-(add-to-list 'load-path "~/.emacs.d/lisp/global")
-(add-to-list 'load-path "~/.emacs.d/lisp/rect-mark")
-(add-to-list 'load-path "~/.emacs.d/lisp/tabbar")
-(add-to-list 'load-path "~/.emacs.d/lisp/speedbar")
+(add-to-list 'load-path "~/.emacs.d/lisp/global/")
+(add-to-list 'load-path "~/.emacs.d/lisp/rect-mark/")
+(add-to-list 'load-path "~/.emacs.d/lisp/tabbar/")
+(add-to-list 'load-path "~/.emacs.d/lisp/speedbar/")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-git/lisp/")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-git/lisp/cedet/")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-git/lisp/eieio/")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-git/contrib/")
 (add-to-list 'load-path "~/.emacs.d/lisp/codestyle/")
-(add-to-list 'load-path "~/.emacs.d/lisp/yasnippet")
-(add-to-list 'load-path "~/.emacs.d/lisp/org/lisp")
-(add-to-list 'load-path "~/.emacs.d/lisp/org/contrib/lisp")
+(add-to-list 'load-path "~/.emacs.d/lisp/yasnippet/")
+(add-to-list 'load-path "~/.emacs.d/lisp/org/lisp/")
+(add-to-list 'load-path "~/.emacs.d/lisp/org/contrib/lisp/")
 ;(add-to-list 'load-path "~/.emacs.d/lisp/slime/")
 
 ;;customize defined variable to storing path
@@ -220,7 +220,7 @@
 ;; a issue like below:
 ;; http://stackoverflow.com/questions/15774807/emacs-24-autocomplete-yasnippet
 ;; just temporary workaround
-(setq ac-source-yasnippet nil)
+;(setq ac-source-yasnippet nil) ;; no error when now !?, so comment it, and auto-complete get more candidates !
 
 ;; auto-complete-clang
 (require 'auto-complete-clang)
@@ -228,8 +228,7 @@
 
 (setq ac-auto-start t)
 (setq ac-quick-help-delay 0.5)
-;(ac-set-trigger-key "TAB")
-;; (define-key ac-mode-map  [(control tab)] 'auto-complete)
+;; (ac-set-trigger-key "TAB")
 ;; (define-key ac-mode-map  [(control tab)] 'auto-complete)
 (defun my-ac-config ()
   (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
@@ -257,21 +256,6 @@
 /usr/include
 "
                )))
-
-;(defface ac-yasnippet-candidate-face
-;  '((t (:background "sandybrown" :foreground "black")))
-;  "Face for yasnippet candidate.")
-;
-;(defface ac-yasnippet-selection-face
-;  '((t (:background "coral3" :foreground "white")))
-;  "Face for the yasnippet selected candidate.")
-;
-;(defvar ac-source-yasnippet
-;  '((candidates . ac-yasnippet-candidate)
-;    (action . yas/expand)
-;    (candidate-face . ac-yasnippet-candidate-face)
-;    (selection-face . ac-yasnippet-selection-face))
-;  "Source for Yasnippet.")
 
 ;; minibuf
 (setq enable-recursive-minibuffers t)
