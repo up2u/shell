@@ -29,6 +29,9 @@
 ;; 增加更丰富的高亮
 (require 'generic-x)
 
+;; 显示行号，并根据是否空行和文件行的语法加亮显示不同的数字颜色
+(require 'setnu+)
+
 ;; for fix function gensym is void
 (require 'cl)
 
@@ -324,10 +327,10 @@
 
 ;; go-to-char http://www.emacswiki.org/emacs/iy-go-to-char.el
 (require 'iy-go-to-char)
-(global-set-key (kbd "C-;") 'iy-go-to-char)
+;(global-set-key (kbd "C-;") 'iy-go-to-char)
 ;; not used key binding
-;(global-set-key (kbd "C-c f") 'iy-go-to-char)
-;(global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
+(global-set-key (kbd "C-c f") 'iy-go-to-char)
+(global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
 ;(global-set-key (kbd "C-c ;") 'iy-go-to-char-continue)
 ;(global-set-key (kbd "C-c ,") 'iy-go-to-char-continue-backward)
 
