@@ -24,6 +24,7 @@
 	rmt = remote
 	sh  = stash
 	st  = status
+	sl  = status .
 [core]
 	excludesfile = ~/.gitignore
 	whitespace = cr-at-eol
