@@ -137,13 +137,25 @@
 ;; minibuf
 (setq enable-recursive-minibuffers t)
 
-;; selected region to upcase/downcase
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
-;; narrowing
-;;(put 'narrow-to-region 'disabled nil)
 ;; goal column (key: C-x C-n)
 (put 'set-goal-column 'disabled nil)
+
+;;----------------------------------------------------------------------------
+;; Don't disable case-change functions
+;;----------------------------------------------------------------------------
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
+;;----------------------------------------------------------------------------
+
+;; Don't disable narrowing commands
+;;----------------------------------------------------------------------------
+;; narrowing
+;;(put 'narrow-to-region 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
+(put 'narrow-to-page 'disabled nil)
+(put 'narrow-to-defun 'disabled nil)
+
 
 ;;
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
@@ -200,6 +212,7 @@
 ;; make it easy on eyes first ...
 (set-foreground-color "Wheat")   ;; look ok
 (set-background-color "DarkSlateGray")  ;; look ok
+;(set-background-color "#55688a")  ;; from gmail theme
 (set-cursor-color "Yellow")  ;; Yellow looks good
 (set-mouse-color "Orchid")   ;; so so
 
@@ -263,7 +276,30 @@
 ;; transposing text: M-t transpose-words
 (global-set-key  (kbd "C-t") 'transpose-sexps)
 
+;; anzu
+(global-anzu-mode +1)
+
+(require 'autopair)
+(autopair-global-mode) ;; to enable in all buffers
+
+;; ASCII
+(require 'ascii)
+
 ;;start server
-(server-start)
+(require 'server)
+(unless (server-running-p)
+  (server-start))
+
+;;----------------------------------------------------------------------------
+;; Show a marker in the left fringe for lines not in the buffer
+;;----------------------------------------------------------------------------
+;(setq indicate-empty-lines t) ;设置了还是 nil, 用 set-default 可以，效果不显明，不用
+
+;;mlj (define-ibuffer-column size-h
+;;mlj     (:name "Size" :inline t)
+;;mlj     (cond
+;;mlj      ((> (buffer-size) 1000000) (format "%7.1fM" (/ (buffer-size) 1000000.0)))
+;;mlj      ((> (buffer-size) 1000) (format "%7.1fk" (/ (buffer-size) 1000.0)))
+;;mlj      (t (format "%8d" (buffer-size)))))
 
 (provide 'customize-setting)

@@ -1,36 +1,37 @@
 ;; add load path
-;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/common/")
-;(add-to-list 'load-path "~/.emacs.d/lisp/cedet-1.1/semantic/")
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-(add-to-list 'load-path "~/.emacs.d/lisp/util/")
-(add-to-list 'load-path "~/.emacs.d/lisp/cscope/")
 (add-to-list 'load-path "~/.emacs.d/lisp/auto-complete/")
 (add-to-list 'load-path "~/.emacs.d/lisp/auto-complete/lib/fuzzy/")
 (add-to-list 'load-path "~/.emacs.d/lisp/auto-complete/lib/popup/")
 (add-to-list 'load-path "~/.emacs.d/lisp/auto-complete-clang/")
-(add-to-list 'load-path "~/.emacs.d/lisp/global/")
-(add-to-list 'load-path "~/.emacs.d/lisp/rect-mark/")
-(add-to-list 'load-path "~/.emacs.d/lisp/tabbar/")
-(add-to-list 'load-path "~/.emacs.d/lisp/speedbar/")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-git/lisp/")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-git/lisp/cedet/")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-git/lisp/eieio/")
 (add-to-list 'load-path "~/.emacs.d/lisp/cedet-git/contrib/")
-(add-to-list 'load-path "~/.emacs.d/lisp/codestyle/")
-(add-to-list 'load-path "~/.emacs.d/lisp/yasnippet/")
 (add-to-list 'load-path "~/.emacs.d/lisp/org/lisp/")
 (add-to-list 'load-path "~/.emacs.d/lisp/org/contrib/lisp/")
-;(add-to-list 'load-path "~/.emacs.d/lisp/slime/")
+(add-to-list 'load-path "~/.emacs.d/lisp/yasnippet/")
+(add-to-list 'load-path "~/.emacs.d/lisp/util/")
 
 ;;customize defined variable to storing path
 (defconst my-emacs-path "~/.emacs.d/")
 (defconst my-emacs-lisps-path (concat my-emacs-path "lisp"))
 
+(require 'package)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-to-list 'package-archives '("tromeyelpa" . "http://tromey.com/elpa/"))
+
+;; basic initialization, (require) non-ELPA packages, etc.
+(setq package-enable-at-startup nil)
+(package-initialize)
+;; (require) your ELPA packages, configure them as normal
+
 ;; 增加更丰富的高亮
 (require 'generic-x)
 
 ;; 显示行号，并根据是否空行和文件行的语法加亮显示不同的数字颜色
-(require 'setnu+)
+; (require 'setnu+) ; 没有效果？
 
 ;; for fix function gensym is void
 (require 'cl)
@@ -244,7 +245,7 @@
 ;(global-srecode-minor-mode 1)  ;; need to learn more.
 ;(require 'semantic-tag-folding nil 'noerror)  ;; mlj
 (require 'semantic-tag-folding)  ;; mlj now just require and no error
-(global-semantic-tag-folding-mode 1)
+;(global-semantic-tag-folding-mode 1) ;; 设置了查看，还是 nil, 所以注释掉
 (global-set-key (kbd "C-?") 'global-semantic-tag-folding-mode) ;; 用来表示c一个函数块的左边的倒三角的？
 ;; from http://emacser.com/cedet.htm
 ;;;;;(define-key semantic-tag-folding-mode-map (kbd "C-c , -") 'semantic-tag-folding-fold-block)
