@@ -74,6 +74,11 @@ find . -name "*.S" >> cscope.files
 find . -name "*.s" >> cscope.files
 find . -name "Makefile*" >> cscope.files
 find . -name "makefile*" >> cscope.files
+find . -name "*.lds" >> cscope.files
+find . -name "*.ld" >> cscope.files
+# for kernel compiling need arch's defconfig file
+find . -name "*_defconfig" >> cscope.files
+
 cscope -q -b -i cscope.files -f cscope.out
 
 exit $?
