@@ -30,6 +30,7 @@
 ;; 增加更丰富的高亮
 (require 'generic-x)
 
+
 ;; 显示行号，并根据是否空行和文件行的语法加亮显示不同的数字颜色
 ; (require 'setnu+) ; 没有效果？
 
@@ -161,40 +162,56 @@
 ;; just temporary workaround
 ;(setq ac-source-yasnippet nil) ;; no error when now !?, so comment it, and auto-complete get more candidates !
 
-;; auto-complete-clang
-(require 'auto-complete-clang)
-(setq ac-clang-auto-save t)  ; is my clang an old version for it ?
+;; use auto-complete-clang-async
+(require 'auto-complete-clang-async)
 
-(setq ac-auto-start t)
-(setq ac-quick-help-delay 0.5)
-;; (ac-set-trigger-key "TAB")
-;; (define-key ac-mode-map  [(control tab)] 'auto-complete)
+(defun ac-cc-mode-setup ()
+  (setq ac-clang-complete-executable "~/.emacs.d/lisp/emacs-clang-complete-async/clang-complete")
+  (setq ac-sources '(ac-source-clang-async))
+  (ac-clang-launch-completion-process)
+)
+
 (defun my-ac-config ()
-  (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
-  (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
-  ;; (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
-  (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
-  (add-hook 'css-mode-hook 'ac-css-mode-setup)
+  (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
   (add-hook 'auto-complete-mode-hook 'ac-common-setup)
   (global-auto-complete-mode t))
-(defun my-ac-cc-mode-setup ()
-  (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources)))
-(add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
-;; ac-source-gtags
+
 (my-ac-config)
 
-(setq ac-clang-flags
-      (mapcar (lambda (item)(concat "-I" item))
-              (split-string
-               "
-/usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7
-/usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7/i686-redhat-linux
-/usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7/backward
-/usr/local/include
-/usr/lib/gcc/i686-redhat-linux/4.4.7/include
-/usr/include
-"
-               )))
+;;mlj ;; auto-complete-clang
+;;mlj (require 'auto-complete-clang)
+;;mlj (setq ac-clang-auto-save t)  ; is my clang an old version for it ?
+;;mlj
+;;mlj (setq ac-auto-start t)
+;;mlj (setq ac-quick-help-delay 0.5)
+;;mlj ;; (ac-set-trigger-key "TAB")
+;;mlj ;; (define-key ac-mode-map  [(control tab)] 'auto-complete)
+;;mlj (defun my-ac-config ()
+;;mlj   (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
+;;mlj   (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
+;;mlj   ;; (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
+;;mlj   (add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
+;;mlj   (add-hook 'css-mode-hook 'ac-css-mode-setup)
+;;mlj   (add-hook 'auto-complete-mode-hook 'ac-common-setup)
+;;mlj   (global-auto-complete-mode t))
+;;mlj (defun my-ac-cc-mode-setup ()
+;;mlj   (setq ac-sources (append '(ac-source-clang ac-source-yasnippet) ac-sources)))
+;;mlj (add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
+;;mlj ;; ac-source-gtags
+;;mlj (my-ac-config)
+;;mlj
+;;mlj (setq ac-clang-flags
+;;mlj       (mapcar (lambda (item)(concat "-I" item))
+;;mlj               (split-string
+;;mlj                "
+;;mlj /usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7
+;;mlj /usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7/i686-redhat-linux
+;;mlj /usr/lib/gcc/i686-redhat-linux/4.4.7/../../../../include/c++/4.4.7/backward
+;;mlj /usr/local/include
+;;mlj /usr/lib/gcc/i686-redhat-linux/4.4.7/include
+;;mlj /usr/include
+;;mlj "
+;;mlj                )))
 
 ; To auto-start Smex every time you open Emacs add these lines to your .emacs file:
 (require 'smex) ; Not needed if you use package.el

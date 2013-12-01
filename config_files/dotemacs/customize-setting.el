@@ -285,6 +285,9 @@
 ;; ASCII
 (require 'ascii)
 
+;; How to move thru camelCaseWords?
+(global-subword-mode 1) ; 1 for on, 0 for off
+
 ;;start server
 (require 'server)
 (unless (server-running-p)
