@@ -352,6 +352,9 @@
 ;(global-set-key (kbd "C-c ;") 'iy-go-to-char-continue)
 ;(global-set-key (kbd "C-c ,") 'iy-go-to-char-continue-backward)
 
+;; magit
+(require 'magit)
+
 ;; load my util
 (require 'myutil)
 
